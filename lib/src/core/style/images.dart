@@ -14,6 +14,9 @@ sealed class AppImages {
     fit: BoxFit.cover,
   );
 
+  static final SvgPicture logInAndRegister = SvgPicture.asset(
+    "",
+  );
 
 
   /// PNG

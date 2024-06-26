@@ -210,6 +210,20 @@ sealed class AppImages {
     fit: BoxFit.cover,
   );
 
+  static final SvgPicture scanIcon = SvgPicture.asset(
+    "assets/images/scan_icon.svg",
+    height: 18.h,
+    width: 22.w,
+    fit: BoxFit.cover,
+  );
+
+  static final SvgPicture cameraIcon = SvgPicture.asset(
+    "assets/images/camera_icon.svg",
+    height: 18.h,
+    width: 20.w,
+    fit: BoxFit.cover,
+  );
+
   static final SvgPicture heartSelectedIcon = SvgPicture.asset(
     "assets/images/heart_icon_selected.svg",
     height: 28.5.h,

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/splash/presentation/widgets/page_dot_widget.dart';
 
 import '../../../../core/routes/app_route_name.dart';
-import '../../../../core/style/colors.dart';
 import '../../../../core/style/images.dart';
 import '../../../../core/style/text_style.dart';
 import '../../../../core/widget/button_widget.dart';
@@ -96,27 +96,6 @@ class OnboardingWidget extends StatelessWidget {
             ),
             SizedBox(height: 64.h),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class PageDot extends StatelessWidget {
-  final int currentIndex;
-  final int index;
-
-  const PageDot({super.key, required this.currentIndex, required this.index});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: currentIndex == index ? 10.0 : 8.0,
-      width: currentIndex == index ? 20.0 : 12.0,
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: currentIndex == index ? AppColors.cFF806E : AppColors.cFFC0B8,
-          borderRadius: BorderRadius.circular(16),
         ),
       ),
     );

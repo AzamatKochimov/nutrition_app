@@ -7,7 +7,7 @@ import '../../../../core/routes/app_route_name.dart';
 import '../../../../core/style/colors.dart';
 import '../../../../core/style/images.dart';
 import '../../../../core/style/text_style.dart';
-import '../../../../core/widget/splash_button_widget.dart';
+import '../../../../core/widget/button_widget.dart';
 import '../../../../core/widget/splash_rich_text_widget.dart';
 
 class OnboardingWidget extends StatelessWidget {
@@ -75,7 +75,7 @@ class OnboardingWidget extends StatelessWidget {
               ),
             ),
             SizedBox(height: 40.h),
-            SplashButtonWidget(
+            ButtonWidget(
               onPressed: () {
                 isFinal != null && isFinal == true
                     ? context.go("${AppRouteName.login}/${AppRouteName.register}")

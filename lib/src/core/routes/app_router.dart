@@ -18,7 +18,7 @@ final class AppRouter{
 
 
   static GoRouter router = GoRouter(
-      initialLocation: AppRouteName.splashPage,
+      initialLocation: AppRouteName.onboarding,
       routes: <RouteBase>[
 
         /// Splash

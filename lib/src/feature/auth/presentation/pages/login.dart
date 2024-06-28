@@ -5,6 +5,10 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return const Scaffold(
+      body: Center(
+        child: Text("Log In page", style: TextStyle(color: Colors.black),),
+      ),
+    );
   }
 }

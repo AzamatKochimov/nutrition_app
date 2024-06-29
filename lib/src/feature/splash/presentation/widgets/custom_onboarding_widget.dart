@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/splash/presentation/widgets/page_dot_widget.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/splash/presentation/widgets/custom_page_dot_widget.dart';
 
 import '../../../../core/routes/app_route_name.dart';
 import '../../../../core/style/images.dart';
 import '../../../../core/style/text_style.dart';
-import '../../../../core/widget/button_widget.dart';
-import '../../../../core/widget/splash_rich_text_widget.dart';
+import '../../../../core/widget/custom_button_widget.dart';
+import '../../../../core/widget/custom_rich_text_widget.dart';
 
-class OnboardingWidget extends StatelessWidget {
+class CustomOnboardingWidget extends StatelessWidget {
   final SvgPicture onboardingImage;
   final PageController pageController;
   final String title;
@@ -19,7 +19,7 @@ class OnboardingWidget extends StatelessWidget {
   final int currentIndex;
   final bool? isFinal;
 
-  const OnboardingWidget({
+  const CustomOnboardingWidget({
     super.key,
     required this.onboardingImage,
     required this.pageController,
@@ -68,17 +68,18 @@ class OnboardingWidget extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  PageDot(currentIndex: currentIndex, index: 0),
-                  PageDot(currentIndex: currentIndex, index: 1),
-                  PageDot(currentIndex: currentIndex, index: 2),
+                  CustomPageDotWidget(currentIndex: currentIndex, index: 0),
+                  CustomPageDotWidget(currentIndex: currentIndex, index: 1),
+                  CustomPageDotWidget(currentIndex: currentIndex, index: 2),
                 ],
               ),
             ),
             SizedBox(height: 40.h),
-            ButtonWidget(
+            CustomButtonWidget(
               onPressed: () {
                 isFinal != null && isFinal == true
-                    ? context.go("${AppRouteName.login}/${AppRouteName.register}")
+                    ? context
+                        .go("${AppRouteName.login}/${AppRouteName.register}")
                     : pageController.nextPage(
                         duration: const Duration(milliseconds: 400),
                         curve: Curves.easeIn,
@@ -89,7 +90,9 @@ class OnboardingWidget extends StatelessWidget {
             SizedBox(height: 16.h),
             CustomRichText(
               text: "Already Have An Acount?",
+              textSize: 17,
               navigateText: "Log In",
+              navigateTextSize: 17,
               onTap: () {
                 context.go(AppRouteName.login);
               },

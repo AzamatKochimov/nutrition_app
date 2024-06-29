@@ -4,12 +4,12 @@ import 'package:provider_go_router_flutter_localizations_inherited_widget/src/co
 
 import '../style/colors.dart';
 
-class ButtonWidget extends StatelessWidget{
+class CustomButtonWidget extends StatelessWidget{
 
   final void Function()? onPressed;
   final String text;
 
-  const ButtonWidget({super.key, required this.onPressed, required this.text});
+  const CustomButtonWidget({super.key, required this.onPressed, required this.text});
 
 
   @override

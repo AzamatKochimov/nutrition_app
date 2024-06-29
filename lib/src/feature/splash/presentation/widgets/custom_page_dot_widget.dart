@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import '../../../../core/style/colors.dart';
 
-class PageDot extends StatelessWidget {
+class CustomPageDotWidget extends StatelessWidget {
   final int currentIndex;
   final int index;
 
-  const PageDot({super.key, required this.currentIndex, required this.index});
+  const CustomPageDotWidget({super.key, required this.currentIndex, required this.index});
 
   @override
   Widget build(BuildContext context) {

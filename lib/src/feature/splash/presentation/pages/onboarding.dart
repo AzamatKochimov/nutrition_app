@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/images.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/splash/presentation/widgets/onboarding_widget.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/splash/presentation/widgets/custom_onboarding_widget.dart';
 
 class Onboarding extends StatefulWidget {
 
@@ -25,7 +25,7 @@ class _OnboardingState extends State<Onboarding> {
       body: PageView(
         controller: pageController,
         children: [
-          OnboardingWidget(
+          CustomOnboardingWidget(
             onboardingImage: AppImages.firstOnboardingImage,
             pageController: pageController,
             title: "Eat Healthy",
@@ -33,7 +33,7 @@ class _OnboardingState extends State<Onboarding> {
             buttonText: "Next",
             currentIndex: 0,
           ),
-          OnboardingWidget(
+          CustomOnboardingWidget(
             onboardingImage: AppImages.secondOnboardingImage,
             pageController: pageController,
             title: "Healthy Recipes",
@@ -41,7 +41,7 @@ class _OnboardingState extends State<Onboarding> {
             buttonText: "Next",
             currentIndex: 1,
           ),
-          OnboardingWidget(
+          CustomOnboardingWidget(
             onboardingImage: AppImages.thirdOnboardingImage,
             pageController: pageController,
             title: "Track Your Health",

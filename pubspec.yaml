@@ -38,4 +38,62 @@ flutter:
   assets:
     - assets/images/
     - assets/lang/
+    - assets/fonts/
 
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito/static/Nunito-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Nunito/static/Nunito-BlackItalic.ttf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/Nunito/static/Nunito-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Nunito/static/Nunito-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Nunito/static/Nunito-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Nunito/static/Nunito-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/Nunito/static/Nunito-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Nunito/static/Nunito-ExtraLightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/Nunito/static/Nunito-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Nunito/static/Nunito-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Nunito/static/Nunito-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/Nunito/static/Nunito-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Nunito/static/Nunito-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Nunito/static/Nunito-Regular.ttf
+        - asset: assets/fonts/Nunito/static/Nunito-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Nunito/static/Nunito-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf
+          style: italic
+        - asset: assets/fonts/Nunito/Nunito-VariableFont_wght.ttf
+
+    - family: Signika
+      fonts:
+        - asset: assets/fonts/Signika/static/Signika-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Signika/static/Signika-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Signika/static/Signika-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Signika/static/Signika-Regular.ttf
+        - asset: assets/fonts/Signika/static/Signika-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Signika/Signika-VariableFont_GRAD,wght.ttf

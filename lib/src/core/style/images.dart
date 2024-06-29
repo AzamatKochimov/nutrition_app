@@ -14,6 +14,20 @@ sealed class AppImages {
   //   fit: BoxFit.cover,
   // );
 
+  static final SvgPicture kcal = SvgPicture.asset(
+    "assets/images/kcal.svg",
+    height: 48.11.h,
+    width: 116.83.w,
+    fit: BoxFit.cover,
+  );
+
+  static final SvgPicture kcalOnboarding = SvgPicture.asset(
+    "assets/images/kcal_onboarding.svg",
+    height: 24.h,
+    width: 58.29.w,
+    fit: BoxFit.cover,
+  );
+
   static final SvgPicture firstOnboardingImage = SvgPicture.asset(
     "assets/images/onboarding_1_img.svg",
     height: 282.h,

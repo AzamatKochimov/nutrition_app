@@ -29,6 +29,10 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return suffixIcon == null
         ? TextField(
+            style: const AppTextStyle().headline10?.copyWith(
+                  fontSize: 20,
+                  color: AppColors.black,
+                ),
             controller: controller,
             keyboardType: keyBoardType,
             obscureText: obscureText ?? false,
@@ -85,6 +89,10 @@ class CustomTextField extends StatelessWidget {
 
         /// Icon qo'shilsa pasdigi ishlidi (Password)
         : TextField(
+            style: const AppTextStyle().headline10?.copyWith(
+                  fontSize: 20,
+                  color: AppColors.black,
+                ),
             controller: controller,
             // textDirection: TextDecoration.none, ///  =>  WHY IS THIS ERROR??????
             onTap: onTap,
@@ -98,12 +106,24 @@ class CustomTextField extends StatelessWidget {
                   color: Color(0x00ff0000),
                 ),
               ),
-              labelStyle: const AppTextStyle().headline10,
-              floatingLabelStyle:
-                  const AppTextStyle().headline10?.copyWith(fontSize: 25),
+              labelStyle: const AppTextStyle().headline10?.copyWith(
+                fontFamily: "Signika",
+                fontWeight: FontWeight.w200,
+                fontSize: 20,
+                color: AppColors.black,
+              ),
+              floatingLabelStyle: const AppTextStyle().headline10?.copyWith(
+                    fontSize: 30,
+                    color: AppColors.c777777,
+                  ),
               label: Text(labelText),
               hintText: hintText,
-              hintStyle: const AppTextStyle().headline10,
+              hintStyle: const AppTextStyle().headline10?.copyWith(
+                    fontFamily: "Signika",
+                    fontWeight: FontWeight.w200,
+                    fontSize: 20,
+                    color: AppColors.c777777,
+                  ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(

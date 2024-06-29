@@ -4,13 +4,15 @@ import 'package:provider_go_router_flutter_localizations_inherited_widget/src/co
 
 import '../style/colors.dart';
 
-class CustomButtonWidget extends StatelessWidget{
-
+class CustomButtonWidget extends StatelessWidget {
   final void Function()? onPressed;
   final String text;
 
-  const CustomButtonWidget({super.key, required this.onPressed, required this.text});
-
+  const CustomButtonWidget({
+    super.key,
+    required this.onPressed,
+    required this.text,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +28,10 @@ class CustomButtonWidget extends StatelessWidget{
         child: Text(
           text,
           style: const AppTextStyle().displayMedium?.copyWith(
-            fontFamily: "Signika",
-            fontWeight: FontWeight.w600,
-            fontSize: 25.h,
-          ),
+                fontFamily: "Signika",
+                fontWeight: FontWeight.w600,
+                fontSize: 25.h,
+              ),
         ),
       ),
     );

@@ -197,14 +197,14 @@ sealed class AppImages {
   );
 
   static final SvgPicture homeSelectedIcon = SvgPicture.asset(
-    "assets/images/heart_icon_selected.svg",
+    "assets/images/home_icon_selected.svg",
     height: 30.h,
     width: 28.5.w,
     fit: BoxFit.cover,
   );
 
   static final SvgPicture homeUnselectedIcon = SvgPicture.asset(
-    "assets/images/heart_icon_unselected.svg",
+    "assets/images/home_icon_unselected.svg",
     height: 26.67.h,
     width: 25.33.w,
     fit: BoxFit.cover,

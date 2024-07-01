@@ -12,11 +12,7 @@ class SearchPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           children: [
-            MaterialButton(
-              padding: EdgeInsets.zero,
-              color: AppColors.cF4F4F4,
-              onPressed: (){},
-            ),
+            
             
           ],
         ),

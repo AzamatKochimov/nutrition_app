@@ -7,6 +7,7 @@ import 'package:provider_go_router_flutter_localizations_inherited_widget/src/fe
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/widgets/custom_home_center_card.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/widgets/custom_home_center_top_button.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/widgets/custom_home_top_text.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/splash/presentation/widgets/custom_page_dot_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -27,7 +28,7 @@ class HomePage extends StatelessWidget {
                   title: "Hello Shambhavi,",
                   subTitle: "Find, track and eat heathy food."),
               const CustomHomeCenterTopCard(),
-              AppImages.renewPlansIcon,
+              const CustomPageDotWidget(currentIndex: 0, index: 0),
               const CustomHomeCenterCard(),
               Container(
                 alignment: Alignment.centerLeft,

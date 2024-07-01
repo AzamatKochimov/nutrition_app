@@ -6,10 +6,20 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: AppColors.white,
-      body: Center(
-        child: Text("Search",style: TextStyle(fontSize: 32,color: AppColors.black),),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+        child: Column(
+          children: [
+            MaterialButton(
+              padding: EdgeInsets.zero,
+              color: AppColors.cF4F4F4,
+              onPressed: (){},
+            ),
+            
+          ],
+        ),
       ),
     );
   }

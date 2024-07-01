@@ -5,6 +5,10 @@ class SearchViewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return const Scaffold(
+      body: Center(
+        child: Text("Search View",style: TextStyle(color: Colors.black),),
+      ),
+    );
   }
 }

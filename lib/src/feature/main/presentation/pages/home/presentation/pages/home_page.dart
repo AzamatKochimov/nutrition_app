@@ -1,15 +1,61 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/images.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/text_style.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/widgets/custom_home_button_card.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/widgets/custom_home_center_card.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/widgets/custom_home_center_top_button.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/widgets/custom_home_top_text.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+
+    return Scaffold(
       backgroundColor: AppColors.white,
-      body: Center(
-        child: Text("Home Page",style: TextStyle(fontSize: 32,color: AppColors.black),),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 28),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const CustomHomeTopText(
+                  title: "Hello Shambhavi,",
+                  subTitle: "Find, track and eat heathy food."),
+              const CustomHomeCenterTopCard(),
+              AppImages.renewPlansIcon,
+              const CustomHomeCenterCard(),
+              Container(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Choose Your Favorites",
+                  style: const AppTextStyle().headline10?.copyWith(
+                      fontFamily: "Signika",
+                      fontSize: 22,
+                      color: AppColors.black),
+                ),
+              ),
+              SizedBox(
+                height: 150.h,
+                width: double.infinity,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return CustomHomeBottomButtonCard(
+                      image: AppImages.homeStrawberryImage,
+                      title: "Fruits",
+                    );
+                  },
+                  itemCount: 4,
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

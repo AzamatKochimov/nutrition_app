@@ -68,8 +68,8 @@ final class AppTextStyle extends TextTheme {
 
   @override
   TextStyle? get titleLarge => TextStyle(
-        fontWeight: FontWeight.w400,
-        fontSize: FontSize.size12,
+        fontWeight: FontWeight.w600,
+        fontSize: FontSize.size18,
         fontFamily: 'Rubik',
         color: AppColors.white,
       );
@@ -195,7 +195,6 @@ final class AppTextStyle extends TextTheme {
         color: AppColors.white,
       );
 
-  @override
   @override
   TextStyle? get loginLabelSmall => TextStyle(
         fontWeight: FontWeight.w400,

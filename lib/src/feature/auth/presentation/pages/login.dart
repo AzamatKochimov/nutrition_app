@@ -7,6 +7,7 @@ import 'package:provider_go_router_flutter_localizations_inherited_widget/src/co
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_rich_text_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/controller/auth_controller.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/widgets/custom_text_field.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_text_widget.dart';
 
 import '../../../../core/style/colors.dart';
 import '../../../../core/style/images.dart';
@@ -27,15 +28,10 @@ class Login extends StatelessWidget {
               const Spacer(),
               AppImages.authTopImage,
               const Spacer(),
-              Text(
-                "Log In",
+              const CustomTextWidget(
+                text: "Log In",
+                fontFamily: "Signika",
                 textAlign: TextAlign.center,
-                style: const AppTextStyle().displayLarge?.copyWith(
-                  fontFamily: "Signika",
-                  fontWeight: FontWeight.w400,
-                  fontSize: 32.09.h,
-                  color: AppColors.black,
-                ),
               ),
               const Spacer(),
               CustomTextField(
@@ -56,30 +52,37 @@ class Login extends StatelessWidget {
                   onPressed: () {},
                   icon: const Icon(Icons.visibility),
                 ),
-                onTap: (){
-
+                onTap: () {
+                  /// Missed side
                 },
                 obscureText: true,
               ),
-              SizedBox(height: 5.h),
+              SizedBox(height: 6.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
-                    "Forgot password?",
-                    style: const AppTextStyle().headline10?.copyWith(
-                          fontFamily: "Signika",
-                          fontWeight: FontWeight.w600,
-                          fontSize: 17.12.h,
-                          color: AppColors.c91C788,
-                        ),
+                  TextButton(
+                    onPressed: () {
+                      context.go(
+                          "${AppRouteName.login}/${AppRouteName.register}/${AppRouteName.forgotPassword}");
+                    },
+                    child: Text(
+                      "Forgot password?",
+                      style: const AppTextStyle().headline10?.copyWith(
+                            fontFamily: "Signika",
+                            fontWeight: FontWeight.w600,
+                            fontSize: 17.12.h,
+                            color: AppColors.c91C788,
+                          ),
+                    ),
                   ),
                 ],
               ),
               const Spacer(flex: 2),
               CustomButtonWidget(
                 onPressed: () {
-
+                  /// Not working correctly
+                  context.go("${AppRouteName.main}${AppRouteName.home}");
                 },
                 text: "Log In",
               ),
@@ -89,7 +92,7 @@ class Login extends StatelessWidget {
                 textSize: 18,
                 navigateText: "Create an account",
                 navigateTextSize: 19,
-                onTap: (){
+                onTap: () {
                   context.go("${AppRouteName.login}/${AppRouteName.register}");
                 },
               ),

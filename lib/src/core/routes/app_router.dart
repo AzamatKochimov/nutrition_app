@@ -1,7 +1,10 @@
 import "package:flutter/material.dart";
 import "package:go_router/go_router.dart";
+import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/forgot%20password/presentation/pages/forgot_password.dart";
+import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/forgot%20password/presentation/pages/forgot_password_pin_code.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/login.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/register.dart";
+import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/forgot%20password/presentation/pages/set_a_new_password.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/favorites/presentation/pages/favorites_page.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/favorites/presentation/pages/favorites_search_page.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/pages/home_page.dart";
@@ -32,7 +35,7 @@ final class AppRouter{
           builder: (BuildContext context, GoRouterState state) => const Onboarding(),
         ),
 
-        /// Auth
+        /// Auth /// Must check!!!
         GoRoute(
           path: AppRouteName.login,
           builder: (BuildContext context, GoRouterState state) => const Login(),
@@ -40,6 +43,24 @@ final class AppRouter{
             GoRoute(
               path: AppRouteName.register,
               builder: (BuildContext context, GoRouterState state) => const Register(),
+              routes: [
+                GoRoute(
+                  path: AppRouteName.forgotPassword,
+                  builder: (BuildContext context, GoRouterState state) => const ForgotPassword(),
+                  routes: [
+                    GoRoute(
+                      path: AppRouteName.forgotPasswordPinCode,
+                      builder: (BuildContext context, GoRouterState state) => const ForgotPasswordPinCode(),
+                      routes: [
+                        GoRoute(
+                          path: AppRouteName.setANewPassword,
+                          builder: (BuildContext context, GoRouterState state) => const SetANewPassword(),
+                        ),
+                      ]
+                    ),
+                  ]
+                ),
+              ]
             ),
           ]
         ),

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/text_style.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_button_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_rich_text_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/controller/auth_controller.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/widgets/custom_text_field.dart';
 
+import '../../../../core/routes/app_route_name.dart';
 import '../../../../core/style/colors.dart';
 import '../../../../core/style/images.dart';
+import '../../../../core/widget/custom_text_widget.dart';
 
 class Register extends StatelessWidget {
   const Register({super.key});
@@ -26,15 +27,10 @@ class Register extends StatelessWidget {
               SizedBox(height: 34.h),
               AppImages.authTopImage,
               SizedBox(height: 16.h),
-              Text(
-                "Please register here!",
+              const CustomTextWidget(
+                text: "Please register here!",
+                fontFamily: "Signika",
                 textAlign: TextAlign.center,
-                style: const AppTextStyle().displayLarge?.copyWith(
-                      fontFamily: "Signika",
-                      fontWeight: FontWeight.w400,
-                      fontSize: 32.09.h,
-                      color: AppColors.black,
-                    ),
               ),
               SizedBox(height: 25.h),
               CustomTextField(
@@ -60,15 +56,20 @@ class Register extends StatelessWidget {
                 keyBoardType: TextInputType.text,
                 textInputAction: TextInputAction.done,
                 suffixIcon: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    /// Missed side
+                  },
                   icon: const Icon(Icons.visibility),
                 ),
-                onTap: (){},
+                onTap: () {},
                 obscureText: true,
               ),
               const Spacer(),
               CustomButtonWidget(
-                onPressed: () {},
+                onPressed: () {
+                  /// Not working correctly
+                  context.go("${AppRouteName.main}${AppRouteName.home}");
+                },
                 text: "Register",
               ),
               const Spacer(),
@@ -77,7 +78,7 @@ class Register extends StatelessWidget {
                 textSize: 20,
                 navigateText: "Log In",
                 navigateTextSize: 20,
-                onTap: (){
+                onTap: () {
                   context.pop();
                 },
               ),

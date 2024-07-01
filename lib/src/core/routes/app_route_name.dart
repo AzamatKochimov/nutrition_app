@@ -8,6 +8,9 @@ final class AppRouteName {
   static const String authGate = "/auth_gate";
   static const String onboarding = "/onboarding";
   static const String login = "/login";
+  static const String forgotPassword = "forgot_password";
+  static const String forgotPasswordPinCode = "forgot_password_pin_code";
+  static const String setANewPassword = "set_a_new_password";
   static const String register = "register";
   static const String main = "/main_page";
   static const String home = "/";

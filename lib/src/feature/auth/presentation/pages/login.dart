@@ -30,8 +30,8 @@ class Login extends StatelessWidget {
               const Spacer(),
               const CustomTextWidget(
                 text: "Log In",
-                fontFamily: "Signika",
-                textAlign: TextAlign.center,
+                fontSize: 32,
+                alignment: Alignment.centerLeft,
               ),
               const Spacer(),
               CustomTextField(

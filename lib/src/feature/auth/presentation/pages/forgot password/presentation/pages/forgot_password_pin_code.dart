@@ -22,7 +22,8 @@ class ForgotPasswordPinCode extends StatelessWidget {
               const CustomTextWidget(
                 text: "Enter the password we have sent to your email",
                 fontFamily: "Nunito",
-                textAlign: TextAlign.start,
+                fontSize: 32,
+                alignment: Alignment.centerLeft,
               ),
               SizedBox(height: 17.3.h),
               CustomTextField(

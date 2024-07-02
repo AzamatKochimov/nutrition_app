@@ -224,6 +224,13 @@ sealed class AppImages {
     fit: BoxFit.cover,
   );
 
+  static final SvgPicture searchTextFieldIcon = SvgPicture.asset(
+    "assets/images/search_icon_unselected.svg",
+    height: 16.h,
+    width: 16.w,
+    fit: BoxFit.cover,
+  );
+
   static final SvgPicture scanIcon = SvgPicture.asset(
     "assets/images/scan_icon.svg",
     height: 18.h,

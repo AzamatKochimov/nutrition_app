@@ -24,7 +24,8 @@ class SetANewPassword extends StatelessWidget {
                   CustomTextWidget(
                     text: "Set a new password!",
                     fontFamily: "Nunito",
-                    textAlign: TextAlign.start,
+                    fontSize: 32,
+                    alignment: Alignment.centerLeft,
                   ),
                 ],
               ),

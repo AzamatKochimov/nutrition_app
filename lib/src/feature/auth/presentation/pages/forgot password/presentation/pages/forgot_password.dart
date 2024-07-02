@@ -24,7 +24,8 @@ class ForgotPassword extends StatelessWidget {
                   CustomTextWidget(
                     text: "Enter your email",
                     fontFamily: "Nunito",
-                    textAlign: TextAlign.start,
+                    fontSize: 32,
+                    alignment: Alignment.centerLeft,
                   ),
                 ],
               ),

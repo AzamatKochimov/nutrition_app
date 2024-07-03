@@ -24,6 +24,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              const SizedBox(),
               const CustomHomeTopText(
                   title: "Hello Shambhavi,",
                   subTitle: "Find, track and eat heathy food."),

@@ -11,6 +11,8 @@ class CustomSearchTextFieldWidget extends StatelessWidget {
   final Color? hintextColor;
   final Widget? suffixIcon;
   final TextInputType? keyboardType;
+  final void Function(String)? onChanged;
+  final TextEditingController? controller;
   const CustomSearchTextFieldWidget({
     super.key,
     this.onTap,
@@ -18,7 +20,9 @@ class CustomSearchTextFieldWidget extends StatelessWidget {
     this.hintextColor,
     this.suffixIcon, 
     required this.hintText, 
-    this.keyboardType,
+    this.keyboardType, 
+    this.onChanged, 
+    this.controller,
   });
 
   @override
@@ -28,6 +32,7 @@ class CustomSearchTextFieldWidget extends StatelessWidget {
       cursorColor: AppColors.c999999,
       keyboardType: keyboardType ?? TextInputType.none,
       style: const TextStyle(color: AppColors.c666666),
+      onChanged: onChanged,
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(24),
@@ -49,6 +54,7 @@ class CustomSearchTextFieldWidget extends StatelessWidget {
         suffixIcon: suffixIcon,
       ),
       onTap: onTap,
+      controller: controller,
     );
   }
 }

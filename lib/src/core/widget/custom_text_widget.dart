@@ -10,6 +10,7 @@ class CustomTextWidget extends StatelessWidget {
   final double? fontSize;
   final FontWeight? fontWeight;
   final Color? color;
+  final TextAlign? textAlign;
 
   const CustomTextWidget({
     super.key,
@@ -18,7 +19,8 @@ class CustomTextWidget extends StatelessWidget {
     this.alignment, 
     this.fontSize, 
     this.fontWeight, 
-    this.color,
+    this.color, 
+    this.textAlign,
   });
 
   @override
@@ -27,6 +29,7 @@ class CustomTextWidget extends StatelessWidget {
       alignment: alignment,
       child: Text(
         " $text",
+        textAlign: textAlign ?? TextAlign.center,
         style: const AppTextStyle().headline10?.copyWith(
               fontFamily: fontFamily ?? "Signika",
               fontWeight: fontWeight ?? FontWeight.w400,

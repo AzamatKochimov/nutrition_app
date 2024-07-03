@@ -27,7 +27,7 @@ class CustomSearchVegetableWidget extends StatelessWidget {
             width: 200.w,
             decoration: const BoxDecoration(
               color: AppColors.cFFF2F0,
-              borderRadius: BorderRadius.vertical(top: Radius.circular(16))
+              borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
             ),
           ),
           SizedBox(
@@ -47,7 +47,7 @@ class CustomSearchVegetableWidget extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

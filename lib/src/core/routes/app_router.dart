@@ -65,6 +65,12 @@ final class AppRouter{
           ]
         ),
 
+        /// Scan Food
+        GoRoute(
+          path: AppRouteName.scan,
+          builder: (BuildContext context, GoRouterState state) => const ScanFoodPage(),
+        ),
+
         /// Main
         ShellRoute(
           builder: (context, state, child) => MainPage(child: child),
@@ -87,11 +93,11 @@ final class AppRouter{
               ]
             ),
 
-            /// Scan Food
-            GoRoute(
-              path: AppRouteName.scan,
-              builder: (BuildContext context, GoRouterState state) => const ScanFoodPage(),
-            ),
+            // /// Scan Food
+            // GoRoute(
+            //   path: AppRouteName.scan,
+            //   builder: (BuildContext context, GoRouterState state) => const ScanFoodPage(),
+            // ),
 
             /// Favorites
             GoRoute(

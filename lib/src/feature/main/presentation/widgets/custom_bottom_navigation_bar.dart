@@ -17,7 +17,6 @@ class CustomBottomNavigationBar extends StatelessWidget {
     return BottomNavigationBar(
       currentIndex: currentIndex,
       onTap: onTap,
-      selectedFontSize: 20,
       showSelectedLabels: false,
       showUnselectedLabels: false,
       items: [

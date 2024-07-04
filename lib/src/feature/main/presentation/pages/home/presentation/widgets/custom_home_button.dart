@@ -23,6 +23,7 @@ class CustomHomeButtonSmall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      height: 32.h,
       width: width?? 104.w,
       child: MaterialButton(
         padding: EdgeInsets.zero,

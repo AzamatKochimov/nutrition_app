@@ -11,18 +11,21 @@ class CustomHomeCenterCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32), borderSide: BorderSide.none),
+          borderRadius: BorderRadius.circular(24), borderSide: BorderSide.none),
       child: ListTile(
         shape: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(32),
+            borderRadius: BorderRadius.circular(24),
             borderSide: BorderSide.none),
-        minTileHeight: 88,
+        minTileHeight: 88.h,
         tileColor: AppColors.c9E9BC7,
-        title: Text(
-          "   Track Your\n   Weekly Progress",
-          style: const AppTextStyle().titleLarge?.copyWith(
-            fontFamily: "Signika",
-            fontSize: 18
+        title: SizedBox(
+          width: 138.w,
+          child: Text(
+            "Track Your\nWeekly Progress",
+            style: const AppTextStyle().titleLarge?.copyWith(
+              fontFamily: "Signika",
+              fontSize: 18.h
+            ),
           ),
         ),
         trailing: CustomHomeButtonSmall(

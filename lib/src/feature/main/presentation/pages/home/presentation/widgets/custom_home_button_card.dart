@@ -36,7 +36,7 @@ class CustomHomeBottomButtonCard extends StatelessWidget {
                   title,
                   style: const AppTextStyle().headline10?.copyWith(
                         fontFamily: "Signika",
-                        fontSize: 17,
+                        fontSize: 17.h,
                         color: AppColors.c4D0A00,
                       ),
                 ),

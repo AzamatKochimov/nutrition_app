@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../style/colors.dart';
 import '../style/text_style.dart';
@@ -33,7 +34,7 @@ class CustomTextWidget extends StatelessWidget {
         style: const AppTextStyle().headline10?.copyWith(
               fontFamily: fontFamily ?? "Signika",
               fontWeight: fontWeight ?? FontWeight.w400,
-              fontSize: fontSize ?? 22,
+              fontSize: fontSize?.h ?? 22,
               color: color ?? AppColors.black,
             ),
       ),

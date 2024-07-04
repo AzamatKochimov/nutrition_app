@@ -36,7 +36,7 @@ class CustomHomeTopText extends StatelessWidget {
           style: const AppTextStyle().titleLarge?.copyWith(
                 fontFamily: "Signika",
                 fontWeight: titleFontWeight ?? FontWeight.w600,
-                fontSize: titleSize ?? 25.h,
+                fontSize: titleSize?.h ?? 25.h,
                 color: titleColor ?? AppColors.c91C788,
               ),
         ),
@@ -45,7 +45,7 @@ class CustomHomeTopText extends StatelessWidget {
           style: const AppTextStyle().displayLarge?.copyWith(
                 fontFamily: "Signika",
                 fontWeight: subTitleFontWeight ?? FontWeight.w400,
-                fontSize: subTitleSize ?? 18.h,
+                fontSize: subTitleSize?.h ?? 18.h,
                 color: subTitleColor ?? AppColors.c7B7B7B,
               ),
         ),

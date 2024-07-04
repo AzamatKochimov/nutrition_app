@@ -19,7 +19,7 @@ class CustomHomeCenterTopCard extends StatelessWidget {
       ),
       color: AppColors.cFFF2F0,
       child: Container(
-        height: 159.h,
+        height: 169.h,
         padding: const EdgeInsets.all(20),
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(
@@ -30,7 +30,7 @@ class CustomHomeCenterTopCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             SizedBox(
-              width: 122.h,
+              width: 125.w,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -20,7 +20,7 @@ import "app_route_name.dart";
 final class AppRouter{
 
   static GoRouter router = GoRouter(
-      initialLocation: AppRouteName.home,
+      initialLocation: AppRouteName.splashPage,
       routes: <RouteBase>[
 
         /// Splash

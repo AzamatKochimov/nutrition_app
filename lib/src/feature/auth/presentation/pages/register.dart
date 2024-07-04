@@ -68,7 +68,7 @@ class Register extends StatelessWidget {
               CustomButtonWidget(
                 onPressed: () {
                   /// Not working correctly
-                  context.go("${AppRouteName.main}${AppRouteName.home}");
+                  context.go(AppRouteName.home);
                 },
                 text: "Register",
               ),

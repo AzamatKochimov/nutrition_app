@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/images.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/widgets/custom_home_button.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/widgets/custom_home_top_text.dart';
+
+import 'custom_home_button.dart';
+import 'custom_home_top_text.dart';
 
 class CustomHomeCenterTopCard extends StatelessWidget {
   const CustomHomeCenterTopCard({super.key});

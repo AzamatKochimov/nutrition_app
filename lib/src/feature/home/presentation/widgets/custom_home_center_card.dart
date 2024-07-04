@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/text_style.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/widgets/custom_home_button.dart';
+
+import 'custom_home_button.dart';
 
 class CustomHomeCenterCard extends StatelessWidget {
   const CustomHomeCenterCard({super.key});

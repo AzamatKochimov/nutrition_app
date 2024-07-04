@@ -4,8 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/routes/app_route_name.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_text_widget.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/search/presentation/widgets/custom_search_text_field_widget.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/search/presentation/widgets/custom_search_vegetable_widget.dart';
+
+import '../widgets/custom_search_text_field_widget.dart';
+import '../widgets/custom_search_vegetable_widget.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});

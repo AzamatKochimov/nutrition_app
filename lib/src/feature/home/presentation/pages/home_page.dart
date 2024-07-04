@@ -3,11 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/images.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_text_widget.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/widgets/custom_home_button_card.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/widgets/custom_home_center_card.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/widgets/custom_home_center_top_button.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/widgets/custom_home_top_text.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/splash/presentation/widgets/custom_page_dot_widget.dart';
+
+import '../widgets/custom_home_button_card.dart';
+import '../widgets/custom_home_center_card.dart';
+import '../widgets/custom_home_center_top_button.dart';
+import '../widgets/custom_home_top_text.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

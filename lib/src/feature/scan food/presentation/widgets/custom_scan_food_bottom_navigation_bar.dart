@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/images.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/scan%20food/presentation/widgets/custom_scan_food_result.dart';
+
+import 'custom_scan_food_result.dart';
 
 class CustomScanFoodBottomNavigationBar extends StatelessWidget {
   const CustomScanFoodBottomNavigationBar({super.key});

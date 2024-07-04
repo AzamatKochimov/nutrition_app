@@ -4,7 +4,8 @@ import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/scan%20food/presentation/widgets/custom_scan_food_bottom_navigation_bar.dart';
+
+import '../widgets/custom_scan_food_bottom_navigation_bar.dart';
 
 class ScanFoodPage extends StatefulWidget {
   const ScanFoodPage({super.key});

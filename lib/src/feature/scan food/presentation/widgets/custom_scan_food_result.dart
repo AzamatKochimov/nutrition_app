@@ -5,8 +5,9 @@ import 'package:provider_go_router_flutter_localizations_inherited_widget/src/co
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_button_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_rich_text_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_text_widget.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/scan%20food/presentation/widgets/custom_scan_ingredients.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/scan%20food/presentation/widgets/custom_text_result_food.dart';
+
+import 'custom_scan_ingredients.dart';
+import 'custom_text_result_food.dart';
 
 class CustomScanFoodResult extends StatelessWidget {
   const CustomScanFoodResult({super.key});

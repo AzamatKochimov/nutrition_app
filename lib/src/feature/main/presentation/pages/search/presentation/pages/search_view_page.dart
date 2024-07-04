@@ -16,6 +16,7 @@ class SearchViewPage extends StatelessWidget {
       backgroundColor: AppColors.white,
       appBar: const CustomAppbarWidget(
         text: "Search",
+        back: true,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),

@@ -33,9 +33,9 @@ class CustomScanFoodResult extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.only(left: 24, top: 24),
                   child: Icon(
-                      CupertinoIcons.xmark,
-                      color: AppColors.black,
-                    ),
+                    CupertinoIcons.xmark,
+                    color: AppColors.black,
+                  ),
                 ),
                 Center(child: AppImages.hamburgerBigImage),
                 Container(
@@ -98,7 +98,9 @@ class CustomScanFoodResult extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: CustomButtonWidget(
-                        onPressed: () {}, text: "Add To Favorites"),
+                      onPressed: () {},
+                      text: "Add To Favorites",
+                    ),
                   ),
                 ],
               ),

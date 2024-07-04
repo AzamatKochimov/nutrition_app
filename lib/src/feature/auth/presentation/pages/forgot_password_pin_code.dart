@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/routes/app_route_name.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_button_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_text_widget.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/forgot%20password/controller/forgot_password_controller.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/controller/auth_controller.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/widgets/custom_text_field.dart';
 
 class ForgotPasswordPinCode extends StatelessWidget {
@@ -27,7 +27,7 @@ class ForgotPasswordPinCode extends StatelessWidget {
               ),
               SizedBox(height: 17.3.h),
               CustomTextField(
-                controller: ForgotPasswordController.passC,
+                controller: AuthController.passwordC,
                 labelText: "Password",
                 hintText: "****",
                 keyBoardType: TextInputType.text,

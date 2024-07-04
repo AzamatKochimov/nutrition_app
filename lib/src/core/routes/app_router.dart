@@ -1,10 +1,10 @@
 import "package:flutter/material.dart";
 import "package:go_router/go_router.dart";
-import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/forgot%20password/presentation/pages/forgot_password.dart";
-import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/forgot%20password/presentation/pages/forgot_password_pin_code.dart";
+import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/forgot_password.dart";
+import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/forgot_password_pin_code.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/login.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/register.dart";
-import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/forgot%20password/presentation/pages/set_a_new_password.dart";
+import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/set_a_new_password.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/favorites/presentation/pages/favorites_page.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/favorites/presentation/pages/favorites_search_page.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/home/presentation/pages/home_page.dart";

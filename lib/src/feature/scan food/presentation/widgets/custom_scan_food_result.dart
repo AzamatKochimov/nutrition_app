@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/images.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_button_widget.dart';
@@ -31,11 +33,16 @@ class CustomScanFoodResult extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(left: 24, top: 24),
-                  child: Icon(
-                    CupertinoIcons.xmark,
-                    color: AppColors.black,
+                Padding(
+                  padding: const EdgeInsets.only(left: 12, top: 12),
+                  child: IconButton(
+                    onPressed: (){
+                      context.pop();
+                    },
+                    icon: const Icon(
+                      CupertinoIcons.xmark,
+                      color: AppColors.black,
+                    ),
                   ),
                 ),
                 Center(child: AppImages.hamburgerBigImage),

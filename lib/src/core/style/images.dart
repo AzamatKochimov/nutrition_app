@@ -91,6 +91,27 @@ sealed class AppImages {
     fit: BoxFit.cover,
   );
 
+  static final SvgPicture scannerPageXIcon = SvgPicture.asset(
+    "assets/images/scanner_page_x_icon.svg",
+    height: 16.h,
+    width: 16.w,
+    fit: BoxFit.cover,
+  );
+
+  static final SvgPicture scannerPageLightningIcon = SvgPicture.asset(
+    "assets/images/scanner_age_lightning_icon.svg",
+    height: 24.h,
+    width: 16.w,
+    fit: BoxFit.cover,
+  );
+
+  static final SvgPicture scannerPageMiddleSquareIcon = SvgPicture.asset(
+    "assets/images/scanner_page_square_icon.svg",
+    height: 251.h,
+    width: 251.w,
+    fit: BoxFit.cover,
+  );
+
   static final SvgPicture hamburgerBigImage = SvgPicture.asset(
     "assets/images/hamburger_big_img.svg",
     height: 140.h,
@@ -151,6 +172,13 @@ sealed class AppImages {
     "assets/images/hotdog_img.svg",
     height: 64.h,
     width: 56.07.w,
+    fit: BoxFit.cover,
+  );
+
+  static final SvgPicture favoritesPageHeartIcon = SvgPicture.asset(
+    "assets/images/favorites_page_heart_icon.svg",
+    height: 12.67.h,
+    width: 13.33.w,
     fit: BoxFit.cover,
   );
 
@@ -242,6 +270,13 @@ sealed class AppImages {
     "assets/images/camera_icon.svg",
     height: 18.h,
     width: 20.w,
+    fit: BoxFit.cover,
+  );
+
+  static final SvgPicture bottomNavigationBarScanIcon = SvgPicture.asset(
+    "assets/images/bottom_navigation_bar_scan_icon.svg",
+    height: 48.h,
+    width: 48.w,
     fit: BoxFit.cover,
   );
 

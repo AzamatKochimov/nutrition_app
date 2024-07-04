@@ -31,7 +31,7 @@ class Login extends StatelessWidget {
               const CustomTextWidget(
                 text: "Log In",
                 fontSize: 32,
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.center,
               ),
               const Spacer(),
               CustomTextField(

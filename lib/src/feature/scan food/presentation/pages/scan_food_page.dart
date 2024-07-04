@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/routes/app_route_name.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/images.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/controller/main_controller.dart';
 
 import '../widgets/custom_scan_food_bottom_navigation_bar.dart';
 
@@ -79,6 +80,7 @@ class _ScanFoodPageState extends State<ScanFoodPage> {
                   children: [
                     IconButton(
                       onPressed: () {
+                        MainController.currentIndex = 0;
                         context.go(AppRouteName.home);
                       },
                       icon: AppImages.scannerPageXIcon,

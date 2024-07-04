@@ -38,7 +38,11 @@ class CustomBottomNavigationBar extends StatelessWidget {
             backgroundColor: AppColors.c91C788,
             child: AppImages.scanIcon,
           ),
-          activeIcon: AppImages.scanIcon,
+          activeIcon: CircleAvatar(
+            radius: 24.h,
+            backgroundColor: AppColors.c91C788,
+            child: AppImages.scanIcon,
+          ),
           label: "",
         ),
         BottomNavigationBarItem(

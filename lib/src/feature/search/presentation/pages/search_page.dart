@@ -32,7 +32,7 @@ class SearchPage extends StatelessWidget {
               alignment: Alignment.centerLeft,
             ),
             SizedBox(
-              height: 231.w,
+              height: 241.h,
               width: double.infinity,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,

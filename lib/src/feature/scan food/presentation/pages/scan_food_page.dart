@@ -3,7 +3,10 @@ import 'dart:developer';
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/routes/app_route_name.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/images.dart';
 
 import '../widgets/custom_scan_food_bottom_navigation_bar.dart';
 
@@ -76,19 +79,15 @@ class _ScanFoodPageState extends State<ScanFoodPage> {
                 child: Row(
                   children: [
                     IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        CupertinoIcons.xmark,
-                        color: AppColors.white,
-                      ),
+                      onPressed: () {
+                        context.go(AppRouteName.home);
+                      },
+                      icon: AppImages.scannerPageXIcon,
                     ),
                     const Spacer(),
                     IconButton(
                       onPressed: () {},
-                      icon: const Icon(
-                        CupertinoIcons.xmark,
-                        color: AppColors.white,
-                      ),
+                      icon: AppImages.scannerPageLightningIcon,
                     ),
                   ],
                 ),

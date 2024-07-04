@@ -31,7 +31,7 @@ class CustomScanFoodResult extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Padding(
-                  padding: EdgeInsets.only(left: 24,top: 24),
+                  padding: EdgeInsets.only(left: 24, top: 24),
                   child: Icon(
                       CupertinoIcons.xmark,
                       color: AppColors.black,

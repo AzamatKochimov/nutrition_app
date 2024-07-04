@@ -93,6 +93,8 @@ class _ScanFoodPageState extends State<ScanFoodPage> {
                 ),
               ),
               const Spacer(),
+              AppImages.scannerPageMiddleSquareIcon,
+              const Spacer(),
               const CustomScanFoodBottomNavigationBar(),
             ],
           )

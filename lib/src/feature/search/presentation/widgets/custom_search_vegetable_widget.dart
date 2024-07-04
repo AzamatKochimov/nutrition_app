@@ -7,8 +7,8 @@ class CustomSearchVegetableWidget extends StatelessWidget {
   final String title;
   final String? subTitle;
   const CustomSearchVegetableWidget({
-    super.key, 
-    required this.title, 
+    super.key,
+    required this.title,
     this.subTitle,
   });
 

@@ -12,21 +12,23 @@ class CustomHomeCenterCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(24), borderSide: BorderSide.none),
+        borderRadius: BorderRadius.circular(24),
+        borderSide: BorderSide.none,
+      ),
       child: ListTile(
         shape: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(24),
-            borderSide: BorderSide.none),
+          borderRadius: BorderRadius.circular(24),
+          borderSide: BorderSide.none,
+        ),
         minTileHeight: 88.h,
         tileColor: AppColors.c9E9BC7,
         title: SizedBox(
           width: 138.w,
           child: Text(
             "Track Your\nWeekly Progress",
-            style: const AppTextStyle().titleLarge?.copyWith(
-              fontFamily: "Signika",
-              fontSize: 18.h
-            ),
+            style: const AppTextStyle()
+                .titleLarge
+                ?.copyWith(fontFamily: "Signika", fontSize: 18.h),
           ),
         ),
         trailing: CustomHomeButtonSmall(
@@ -37,7 +39,6 @@ class CustomHomeCenterCard extends StatelessWidget {
           iconColor: AppColors.c9E9BC7,
           width: 98.w,
         ),
-        
       ),
     );
   }

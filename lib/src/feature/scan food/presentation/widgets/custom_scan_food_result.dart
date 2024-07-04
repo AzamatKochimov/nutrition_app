@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/images.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_button_widget.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_food_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_rich_text_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_text_widget.dart';
 
-import 'custom_scan_ingredients.dart';
 import 'custom_text_result_food.dart';
 
 class CustomScanFoodResult extends StatelessWidget {
@@ -88,10 +88,10 @@ class CustomScanFoodResult extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CustomScanIngredients(image: AppImages.breadImage),
-                      CustomScanIngredients(image: AppImages.tomatoImage),
-                      CustomScanIngredients(image: AppImages.saladImage),
-                      const CustomScanIngredients(
+                      CustomFoodWidget(image: AppImages.breadImage),
+                      CustomFoodWidget(image: AppImages.tomatoImage),
+                      CustomFoodWidget(image: AppImages.saladImage),
+                      const CustomFoodWidget(
                         title: "View\n  All",
                       ),
                     ],

@@ -92,16 +92,20 @@ class CustomScanFoodResult extends StatelessWidget {
                     navigateTextSize: 16.h,
                   ),
                   const CustomTextWidget(text: "Ingredients"),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CustomFoodWidget(image: AppImages.breadImage),
-                      CustomFoodWidget(image: AppImages.tomatoImage),
-                      CustomFoodWidget(image: AppImages.saladImage),
-                      const CustomFoodWidget(
-                        title: "View\n  All",
-                      ),
-                    ],
+                  SizedBox(
+                    height: 70.h,
+                    width: double.infinity,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        CustomFoodWidget(image: AppImages.breadImage),
+                        CustomFoodWidget(image: AppImages.tomatoImage),
+                        CustomFoodWidget(image: AppImages.saladImage),
+                        const CustomFoodWidget(
+                          title: "View\n  All",
+                        ),
+                      ],
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15),

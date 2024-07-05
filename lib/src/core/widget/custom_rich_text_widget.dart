@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../style/colors.dart';
 import '../style/text_style.dart';
@@ -32,7 +33,7 @@ class CustomRichText extends StatelessWidget {
         style: const AppTextStyle().headline10?.copyWith(
             fontFamily: "Signika",
             fontWeight: textFontWeight?? FontWeight.w600,
-            fontSize: textSize,
+            fontSize: textSize?.h,
             color: const Color.fromRGBO(0, 0, 0, 0.45)),
         children: [
           TextSpan(
@@ -40,7 +41,7 @@ class CustomRichText extends StatelessWidget {
             style: const AppTextStyle().displayMedium?.copyWith(
                   fontFamily: "Signika",
                   fontWeight: navigateTextFontWeight ?? FontWeight.w700,
-                  fontSize: navigateTextSize,
+                  fontSize: navigateTextSize?.h,
                   color: AppColors.c91C788,
                 ),
             recognizer: TapGestureRecognizer()..onTap = onTap,

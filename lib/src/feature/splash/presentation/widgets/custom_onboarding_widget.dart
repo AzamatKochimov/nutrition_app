@@ -33,7 +33,7 @@ class CustomOnboardingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 43.w),
+      padding: EdgeInsets.symmetric(horizontal: 42.w),
       child: Center(
         child: Column(
           children: [

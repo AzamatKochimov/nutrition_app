@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_appbar_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/favorites/presentation/widgets/custom_food_page.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/favorites/presentation/widgets/custom_recipes_page.dart';
@@ -28,7 +27,6 @@ class FavoritesPageState extends State<FavoritesPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 20.h),
               GestureDetector(
                 onTap: () {
                   setState(() {

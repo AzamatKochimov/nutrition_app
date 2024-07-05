@@ -21,18 +21,19 @@ class _ScanFoodPageState extends State<ScanFoodPage> {
   late List<CameraDescription> cameras;
   CameraController? cameraController; // Изменяем на nullable
   bool _isCameraInitialized = false;
+  int direction = 0;
 
   @override
   void initState() {
+    startCamera(0);
     super.initState();
-    startCamera();
   }
 
-  Future<void> startCamera() async {
+  Future<void> startCamera(int direction) async {
     try {
       cameras = await availableCameras();
       cameraController = CameraController(
-        cameras[0],
+        cameras[direction],
         ResolutionPreset.high,
         enableAudio: false,
       );
@@ -60,13 +61,11 @@ class _ScanFoodPageState extends State<ScanFoodPage> {
       body: Stack(
         children: [
           _isCameraInitialized && cameraController != null
-              ? Center(
-                  child: SizedBox(
-                    height: double.infinity,
-                    width: double.infinity,
-                    child: CameraPreview(cameraController!),
-                  ),
-                )
+              ? SizedBox(
+                height: MediaQuery.of(context).size.height*0.9,
+                width: double.infinity,
+                child: CameraPreview(cameraController!),
+              )
               : const Center(
                   child: CircularProgressIndicator(
                     backgroundColor: AppColors.cFFC0B8,
@@ -96,7 +95,13 @@ class _ScanFoodPageState extends State<ScanFoodPage> {
               const Spacer(),
               AppImages.scannerPageMiddleSquareIcon,
               const Spacer(),
-              const CustomScanFoodBottomNavigationBar(),
+              CustomScanFoodBottomNavigationBar(
+                onPressedRefreshImage: ()async{
+                  direction = direction == 0?1:0;
+                  await startCamera(direction);
+                  setState(() {});
+                },
+              ),
             ],
           )
         ],

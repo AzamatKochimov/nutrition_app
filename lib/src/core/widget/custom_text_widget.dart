@@ -17,7 +17,7 @@ class CustomTextWidget extends StatelessWidget {
     super.key,
     required this.text,
     this.fontFamily,
-    this.alignment, 
+    this.alignment,
     this.fontSize, 
     this.fontWeight, 
     this.color, 
@@ -34,7 +34,7 @@ class CustomTextWidget extends StatelessWidget {
         style: const AppTextStyle().headline10?.copyWith(
               fontFamily: fontFamily ?? "Signika",
               fontWeight: fontWeight ?? FontWeight.w400,
-              fontSize: fontSize?.h ?? 22,
+              fontSize: fontSize?.sp ?? 22.sp,
               color: color ?? AppColors.black,
             ),
       ),

@@ -91,6 +91,27 @@ sealed class AppImages {
     fit: BoxFit.cover,
   );
 
+  static final SvgPicture scannerPageXIcon = SvgPicture.asset(
+    "assets/images/scanner_page_x_icon.svg",
+    height: 16.h,
+    width: 16.w,
+    fit: BoxFit.cover,
+  );
+
+  static final SvgPicture scannerPageLightningIcon = SvgPicture.asset(
+    "assets/images/scanner_age_lightning_icon.svg",
+    height: 24.h,
+    width: 16.w,
+    fit: BoxFit.cover,
+  );
+
+  static final SvgPicture scannerPageMiddleSquareIcon = SvgPicture.asset(
+    "assets/images/scanner_page_square_icon.svg",
+    height: 251.h,
+    width: 251.w,
+    fit: BoxFit.cover,
+  );
+
   static final SvgPicture hamburgerBigImage = SvgPicture.asset(
     "assets/images/hamburger_big_img.svg",
     height: 140.h,
@@ -154,6 +175,13 @@ sealed class AppImages {
     fit: BoxFit.cover,
   );
 
+  static final SvgPicture favoritesPageHeartIcon = SvgPicture.asset(
+    "assets/images/favorites_page_heart_icon.svg",
+    height: 12.67.h,
+    width: 13.33.w,
+    fit: BoxFit.cover,
+  );
+
   static final SvgPicture noFoodAndRecipeFoundImage = SvgPicture.asset(
     "assets/images/no_food_and_recipe_found_img.svg",
     height: 96.h,
@@ -165,6 +193,13 @@ sealed class AppImages {
     "assets/images/edit_profile_icon.svg",
     height: 23.33.h,
     width: 18.67.w,
+    fit: BoxFit.fitHeight,
+  );
+
+  static final SvgPicture profilePageToRightIcon = SvgPicture.asset(
+    "assets/images/profile_page_to_right_arrow_icon.svg",
+    height: 16.h,
+    width: 23.w,
     fit: BoxFit.cover,
   );
 
@@ -245,6 +280,13 @@ sealed class AppImages {
     fit: BoxFit.cover,
   );
 
+  static final SvgPicture bottomNavigationBarScanIcon = SvgPicture.asset(
+    "assets/images/bottom_navigation_bar_scan_icon.svg",
+    height: 48.h,
+    width: 48.w,
+    fit: BoxFit.cover,
+  );
+
   static final SvgPicture heartSelectedIcon = SvgPicture.asset(
     "assets/images/heart_icon_selected.svg",
     height: 28.5.h,
@@ -288,6 +330,13 @@ sealed class AppImages {
     "assets/images/meals_img.png",
     height: 40.h,
     width: 40.w,
+    fit: BoxFit.cover,
+  );
+
+  static final Image defaultProfileImage = Image.asset(
+    "assets/images/default_profile_image.png",
+    height: 160.h,
+    width: 160.w,
     fit: BoxFit.cover,
   );
 }

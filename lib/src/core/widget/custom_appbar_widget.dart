@@ -7,17 +7,19 @@ import 'package:provider_go_router_flutter_localizations_inherited_widget/src/co
 
 class CustomAppbarWidget extends StatelessWidget
     implements PreferredSizeWidget {
+  final bool back;
   final String text;
   const CustomAppbarWidget({
     super.key, 
     required this.text,
+    required this.back,
   });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      leading: Transform.scale(
+      leading: back ? Transform.scale(
         scale: 1.0.w, // Масштабирование
         child: IconButton(
           icon: const Icon(
@@ -28,7 +30,7 @@ class CustomAppbarWidget extends StatelessWidget
             context.pop();
           },
         ),
-      ),
+      ):null,
       backgroundColor: AppColors.white,
       title: Text(
         text,

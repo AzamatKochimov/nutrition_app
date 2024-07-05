@@ -30,7 +30,7 @@ class Register extends StatelessWidget {
               const CustomTextWidget(
                 text: "Please register here!",
                 fontSize: 32,
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.center,
               ),
               SizedBox(height: 25.h),
               CustomTextField(

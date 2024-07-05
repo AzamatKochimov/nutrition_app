@@ -193,6 +193,13 @@ sealed class AppImages {
     "assets/images/edit_profile_icon.svg",
     height: 23.33.h,
     width: 18.67.w,
+    fit: BoxFit.fitHeight,
+  );
+
+  static final SvgPicture profilePageToRightIcon = SvgPicture.asset(
+    "assets/images/profile_page_to_right_arrow_icon.svg",
+    height: 16.h,
+    width: 23.w,
     fit: BoxFit.cover,
   );
 
@@ -323,6 +330,13 @@ sealed class AppImages {
     "assets/images/meals_img.png",
     height: 40.h,
     width: 40.w,
+    fit: BoxFit.cover,
+  );
+
+  static final Image defaultProfileImage = Image.asset(
+    "assets/images/default_profile_image.png",
+    height: 160.h,
+    width: 160.w,
     fit: BoxFit.cover,
   );
 }

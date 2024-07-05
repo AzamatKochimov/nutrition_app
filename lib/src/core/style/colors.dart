@@ -16,6 +16,7 @@ sealed class AppColors {
   static const Color cCFE7CB = Color(0xffCFE7CB);
   static const Color c330600 = Color(0xff330600);
   static const Color c4D0A00 = Color(0xff4D0A00);
+  static const Color cd91424 = Color(0xffd91424);
   static const Color cFF806E = Color(0xffFF806E);
   static const Color cFF8473 = Color(0xffFF8473);
   static const Color cFF9385 = Color(0xffFF9385);
@@ -38,6 +39,7 @@ sealed class AppColors {
   static const Color c999999 = Color(0xff999999);
   static const Color cA1A1A1 = Color(0xffA1A1A1);
   static const Color cA9A9A9 = Color(0xffA9A9A9);
+  static const Color cF6F6F6 = Color(0xffF6F6F6);
   static const Color cFFF2F0 = Color(0xffFFF2F0);
   static const Color cFFF8EE = Color(0xffFFF8EE);
   static const Color cF4F4F4 = Color(0xffF4F4F4);

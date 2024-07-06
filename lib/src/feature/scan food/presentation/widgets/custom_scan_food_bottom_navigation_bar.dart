@@ -7,17 +7,17 @@ import 'package:provider_go_router_flutter_localizations_inherited_widget/src/co
 import 'custom_scan_food_result.dart';
 
 class CustomScanFoodBottomNavigationBar extends StatelessWidget {
-  final void Function()? onPressedRefreshImage;
+  final void Function()? onPressedRefreshCamera;
   const CustomScanFoodBottomNavigationBar({
     super.key,
-    this.onPressedRefreshImage,
+    this.onPressedRefreshCamera,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 168.h,
-      // height: MediaQuery.of(context).size.height*0.18,
+      // height: 168.h,
+      height: MediaQuery.of(context).size.height*0.18,
       width: double.infinity,
       decoration: const BoxDecoration(
         color: AppColors.white,
@@ -52,7 +52,7 @@ class CustomScanFoodBottomNavigationBar extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: onPressedRefreshImage,
+            onPressed: onPressedRefreshCamera,
             icon: AppImages.refreshImage,
             iconSize: double.infinity,
           ),

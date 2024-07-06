@@ -175,6 +175,13 @@ sealed class AppImages {
     fit: BoxFit.cover,
   );
 
+  static final SvgPicture favoritesFoodPageAddFoodPlusIcon = SvgPicture.asset(
+    "assets/images/favorites_food_page_add_food_plus_icon.svg",
+    height: 24.h,
+    width: 24.w,
+    fit: BoxFit.cover,
+  );
+
   static final SvgPicture favoritesPageHeartIcon = SvgPicture.asset(
     "assets/images/favorites_page_heart_icon.svg",
     height: 12.67.h,

@@ -80,7 +80,7 @@ class FavoritesPageState extends State<FavoritesPage> {
             ],
           ),
           Expanded(
-            child: selectedIndex == 0 ? const CustomFoodPage() : const CustomRecipesPage(),
+            child: selectedIndex == 0 ? CustomFoodPage() : const CustomRecipesPage(),
           ),
         ],
       ),

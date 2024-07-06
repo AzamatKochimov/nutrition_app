@@ -10,13 +10,16 @@ class CustomFoodWidget extends StatelessWidget {
   final void Function()? onPressed;
   final double? height;
   final double? width;
+  final Color? backColor;
+
   const CustomFoodWidget({
-    super.key, 
-    this.image, 
-    this.title, 
-    this.onPressed, 
-    this.height, 
+    super.key,
+    this.image,
+    this.title,
+    this.onPressed,
+    this.height,
     this.width,
+    this.backColor,
   });
 
   @override
@@ -27,27 +30,27 @@ class CustomFoodWidget extends StatelessWidget {
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       child: Card(
-        color: AppColors.cFFF2F0,
+        color: backColor ?? AppColors.cFFF2F0,
         shape: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide.none
+          borderSide: BorderSide.none,
         ),
         child: SizedBox(
           height: height?.h ?? 64.h,
           width: width?.w ?? 64.w,
           child: Center(
-            child: title == null ? image : 
-            Text(
-              title!,
-              style: const AppTextStyle().loginLabelMedium?.copyWith(
-                fontFamily: "Signika",
-                color: AppColors.cFF8473
-              ),
-            ),
+            child: title == null
+                ? image
+                : Text(
+                    title!,
+                    style: const AppTextStyle().loginLabelMedium?.copyWith(
+                          fontFamily: "Signika",
+                          color: AppColors.cFF8473,
+                        ),
+                  ),
           ),
         ),
       ),
     );
   }
-
 }

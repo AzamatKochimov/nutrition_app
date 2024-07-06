@@ -219,8 +219,8 @@ sealed class AppImages {
 
   static final SvgPicture termsAndPrivacyPolicyIcon = SvgPicture.asset(
     "assets/images/terms_and_privacy_policy_icon.svg",
-    height: 19.83.h,
-    width: 22.17.w,
+    height: 23.33.h,
+    width: 19.83.w,
     fit: BoxFit.cover,
   );
 

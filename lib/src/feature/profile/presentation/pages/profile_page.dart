@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_appbar_widget.dart';
 import '../../../../core/style/images.dart';
 import '../../../../core/widget/custom_text_widget.dart';
 import '../widgets/custom_profile_page_items_column_widget.dart';
@@ -34,19 +35,16 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
+      appBar: const CustomAppbarWidget(
+        text: "Profile",
+        back: false,
+      ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 32.w),
         child: Center(
           child: Column(
             children: [
               const Spacer(),
-              SizedBox(height: 40.h),
-              const CustomTextWidget(
-                text: "Profile",
-                fontWeight: FontWeight.w500,
-                fontSize: 25,
-                color: AppColors.c0D0D0D,
-              ),
               SizedBox(height: 36.h),
               MaterialButton(
                 onPressed: onPressed,
@@ -55,7 +53,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 minWidth: 109,
                 shape: const CircleBorder(),
                 child: CircleAvatar(
-                  radius: 65.r,
+                  radius: 80.r,
                   backgroundColor: AppColors.transparent,
                   child: AppImages.defaultProfileImage,
                 ),

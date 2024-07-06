@@ -35,7 +35,7 @@ class ProfilePageItemWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(8.0),
                 child: image,
               ),
             ),

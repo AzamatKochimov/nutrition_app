@@ -18,6 +18,7 @@ class FavoritesPageState extends State<FavoritesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       appBar: const CustomAppbarWidget(
         text: "Favorites",
         back: false,

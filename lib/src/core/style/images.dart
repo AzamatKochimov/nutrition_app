@@ -182,6 +182,27 @@ sealed class AppImages {
     fit: BoxFit.cover,
   );
 
+  static final SvgPicture recipeMealRomen = SvgPicture.asset(
+    "assets/images/recipe_meal_romen.svg",
+    height: 64.h,
+    width: 82.35.w,
+    fit: BoxFit.cover,
+  );
+
+  static final SvgPicture favoritesFavoriteIcon = SvgPicture.asset(
+    "assets/images/favorites_favorite_icon.svg",
+    height: 21.67.h,
+    width: 22.33.w,
+    fit: BoxFit.cover,
+  );
+
+  static final SvgPicture recipeMealChicken = SvgPicture.asset(
+    "assets/images/recipe_meal_chicken.svg",
+    height: 74.93.h,
+    width: 81.w,
+    fit: BoxFit.cover,
+  );
+
   static final SvgPicture favoritesPageHeartIcon = SvgPicture.asset(
     "assets/images/favorites_page_heart_icon.svg",
     height: 12.67.h,

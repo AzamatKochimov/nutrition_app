@@ -50,7 +50,7 @@ class ScanFoodPage extends StatelessWidget {
                     ),
                     const Spacer(),
                     Consumer<ScanFoodController>(
-                      builder: (context, scanFoodController, child) { 
+                      builder: (context, scanFoodController, child) {
                         return IconButton(
                         onPressed: scanFoodController.cameraFlashOnOff,
                         icon: Icon(

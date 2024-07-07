@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_button_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_rich_text_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/controller/auth_controller.dart';
@@ -49,38 +50,62 @@ class Register extends StatelessWidget {
                 textInputAction: TextInputAction.next,
               ),
               SizedBox(height: 20.h),
-              CustomTextField(
-                controller: AuthController.passwordC,
-                labelText: "Password",
-                hintText: "******",
-                keyBoardType: TextInputType.text,
-                textInputAction: TextInputAction.done,
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    /// Missed side
+              Consumer<AuthController>(
+                builder: (
+                  BuildContext context,
+                  AuthController value,
+                  Widget? child,
+                ) =>
+                    CustomTextField(
+                  controller: AuthController.passwordC,
+                  labelText: "Password",
+                  hintText: "******",
+                  keyBoardType: TextInputType.text,
+                  textInputAction: TextInputAction.done,
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      value.registerVisibilityFunc();
+                    },
+                    icon: value.registerVisibility
+                        ? const Icon(Icons.visibility)
+                        : const Icon(Icons.visibility_off),
+                  ),
+                  onTap: () {
+                    // value.visibleFunc();
                   },
-                  icon: const Icon(Icons.visibility),
+                  obscureText: value.registerVisibility,
                 ),
-                onTap: () {},
-                obscureText: true,
               ),
               const Spacer(),
               CustomButtonWidget(
                 onPressed: () {
-                  /// Not working correctly
+                  AuthController.nameC.clear();
+                  AuthController.emailC.clear();
+                  AuthController.passwordC.clear();
                   context.go(AppRouteName.home);
                 },
                 text: "Register",
               ),
               const Spacer(),
-              CustomRichText(
-                text: "Already have an account?",
-                textSize: 20,
-                navigateText: "Log In",
-                navigateTextSize: 20,
-                onTap: () {
-                  context.pop();
-                },
+              Consumer<AuthController>(
+                builder: (
+                  BuildContext context,
+                  AuthController value,
+                  Widget? child,
+                ) =>
+                    CustomRichText(
+                  text: "Already have an account?",
+                  textSize: 20,
+                  navigateText: "Log In",
+                  navigateTextSize: 20,
+                  onTap: () {
+                    AuthController.nameC.clear();
+                    AuthController.emailC.clear();
+                    AuthController.passwordC.clear();
+                    value.refresh(doYouWantToRefreshLoginOrRegister: "l");
+                    context.pop();
+                  },
+                ),
               ),
               SizedBox(height: 53.h),
             ],

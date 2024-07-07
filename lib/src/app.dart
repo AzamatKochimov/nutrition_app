@@ -21,6 +21,9 @@ class App extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => ScanFoodController(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => AuthController(),
+        ),
       ],
       child: const App(),
     ),

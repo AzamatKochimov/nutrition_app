@@ -21,17 +21,22 @@ class ScanFoodPage extends StatelessWidget {
         children: [
           Consumer<ScanFoodController>(
             builder: (context, scanFoodController,child){
-              return scanFoodController.isCameraInitialized && scanFoodController.cameraController != null
-              ? SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.9,
-                  width: double.infinity,
-                  child: CameraPreview(scanFoodController.cameraController!),
-                )
-              : const Center(
+              if (scanFoodController.isCameraInitialized && scanFoodController.cameraController != null) {
+                return GestureDetector(
+                  onTapDown: (details) => scanFoodController.setFocusPoint(context,details),
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.9,
+                    width: double.infinity,
+                    child: CameraPreview(scanFoodController.cameraController!),
+                  ),
+                );
+              }else{
+                return const Center(
                   child: CircularProgressIndicator(
                     backgroundColor: AppColors.cFFC0B8,
                   ),
                 );
+              }
             },
           ),
           Column(
@@ -54,7 +59,7 @@ class ScanFoodPage extends StatelessWidget {
                         return IconButton(
                         onPressed: scanFoodController.cameraFlashOnOff,
                         icon: Icon(
-                          scanFoodController.cameraFlash ? CupertinoIcons.bolt_fill :CupertinoIcons.bolt_slash_fill,
+                          scanFoodController.cameraFlash ? CupertinoIcons.bolt_slash_fill : CupertinoIcons.bolt_fill,
                           color: AppColors.white,
                         ),
                       );

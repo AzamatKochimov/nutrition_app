@@ -10,11 +10,11 @@ class ScanFoodController with ChangeNotifier {
   int direction = 0;
   bool cameraFlash = false;
 
-  ScanFoodController(){
+  ScanFoodController() {
     _initializeCamera();
   }
 
-  Future<void> _initializeCamera()async{
+  Future<void> _initializeCamera() async {
     await startCamera(direction);
   }
 
@@ -34,13 +34,32 @@ class ScanFoodController with ChangeNotifier {
     }
   }
 
-  void cameraFlashOnOff(){
-    cameraFlash = !cameraFlash;
-    notifyListeners();
+  void cameraFlashOnOff() async {
+    if (cameraController != null) {
+      if (cameraFlash) {
+        await cameraController?.setFlashMode(FlashMode.off);
+      } else {
+        await cameraController?.setFlashMode(FlashMode.torch);
+      }
+      cameraFlash = !cameraFlash;
+      notifyListeners();
+    }
   }
 
-  void switchCamera(){
-    direction = direction==0?1:0;
+  void setFocusPoint(BuildContext context,TapDownDetails details) {
+    if (cameraController != null) {
+      final RenderBox renderBox = context.findRenderObject() as RenderBox;
+      final Offset localPosition = renderBox.globalToLocal(details.globalPosition);
+      final Offset focusPoint = Offset(
+        localPosition.dx / renderBox.size.width,
+        localPosition.dy / renderBox.size.height,
+      );
+      cameraController!.setFocusPoint(focusPoint);
+    }
+  }
+
+  void switchCamera() {
+    direction = direction == 0 ? 1 : 0;
     startCamera(direction);
   }
 
@@ -50,4 +69,3 @@ class ScanFoodController with ChangeNotifier {
     super.dispose();
   }
 }
-

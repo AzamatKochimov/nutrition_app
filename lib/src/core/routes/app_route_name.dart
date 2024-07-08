@@ -18,6 +18,5 @@ final class AppRouteName {
   static const String searchView = "search_view_page";
   static const String scan = "/scan_food_page";
   static const String favorites = "/favorites_page";
-  static const String favoritesSearchView = "favorites_search_page";
   static const String profile = "/profile_page";
 }

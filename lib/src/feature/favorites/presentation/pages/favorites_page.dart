@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/routes/app_route_name.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_appbar_widget.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_button_widget.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/favorites/controller/favorites_controller.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/favorites/presentation/widgets/custom_favorite_tapbar.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/favorites/presentation/widgets/custom_food_page.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/favorites/presentation/widgets/custom_recipes_page.dart';
-import '../../../../core/style/colors.dart';
-import '../../../../core/widget/custom_text_widget.dart';
 
-class FavoritesPage extends StatefulWidget {
+class FavoritesPage extends StatelessWidget {
   const FavoritesPage({super.key});
-
-  @override
-  FavoritesPageState createState() => FavoritesPageState();
-}
-
-class FavoritesPageState extends State<FavoritesPage> {
-  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -23,67 +22,40 @@ class FavoritesPageState extends State<FavoritesPage> {
         text: "Favorites",
         back: false,
       ),
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    selectedIndex = 0;
-                  });
+      body: Padding(
+        padding: EdgeInsets.only(left: 31.w, right: 31.w, top: 15.h),
+        child: Column(
+          children: [
+            Consumer<FavoritesController>(
+              builder: (context,ref,child) {
+                return CustomFavoriteTapbar(
+                  selectedIndex: ref.selectedIndex,
+                  onTabTapped: (index) => ref.selectedIndex = index,
+                );
+              }
+            ),
+            SizedBox(height: 20.h,),
+            Expanded(
+              child: Consumer<FavoritesController>(
+                builder: (context, ref, child) {
+                  return ref.selectedIndex == 0
+                      ? const CustomFoodPage()
+                      : const CustomRecipesPage();
                 },
-                child: Container(
-                  width: 156.5,
-                  height: 48,
-                  decoration: BoxDecoration(
-                    color: selectedIndex == 0 ? AppColors.cFF9385 : AppColors.cFFF8EE,
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(16),
-                      bottomLeft: Radius.circular(16),
-                    ),
-                  ),
-                  child: Center(
-                    child: CustomTextWidget(
-                      text: "Food",
-                      fontSize: 20,
-                      color: selectedIndex == 0 ? AppColors.cFFF8EE : AppColors.cFF9385,
-                    ),
-                  ),
-                ),
               ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    selectedIndex = 1;
-                  });
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 11.w),
+              child: CustomButtonWidget(
+                onPressed: () {
+                  context.go(AppRouteName.search);
                 },
-                child: Container(
-                  width: 156.5,
-                  height: 48,
-                  decoration: BoxDecoration(
-                    color: selectedIndex == 1 ? AppColors.cFF9385 : AppColors.cFFF8EE,
-                    borderRadius: const BorderRadius.only(
-                      topRight: Radius.circular(16),
-                      bottomRight: Radius.circular(16),
-                    ),
-                  ),
-                  child: Center(
-                    child: CustomTextWidget(
-                      text: "Recipes",
-                      fontSize: 20,
-                      color: selectedIndex == 1 ? AppColors.cFFF8EE : AppColors.cFF9385,
-                    ),
-                  ),
-                ),
+                text: "Search Food",
               ),
-            ],
-          ),
-          Expanded(
-            child: selectedIndex == 0 ? const CustomFoodPage() : const CustomRecipesPage(),
-          ),
-        ],
+            ),
+            SizedBox(height: 35.h),
+          ],
+        ),
       ),
     );
   }

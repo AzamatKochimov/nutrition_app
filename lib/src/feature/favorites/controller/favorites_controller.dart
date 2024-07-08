@@ -5,6 +5,15 @@ import '../../../core/widget/custom_food_widget.dart';
 import '../presentation/widgets/custom_recipe_widget.dart';
 
 class FavoritesController extends ChangeNotifier{
+  int _selectedIndex = 0;
+  
+  int get selectedIndex => _selectedIndex;
+
+  set selectedIndex(int index){
+    _selectedIndex = index;
+    notifyListeners();
+  }
+
   static List<CustomFoodWidget> food = [
     CustomFoodWidget(
       image: AppImages.cakeImage,

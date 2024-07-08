@@ -17,37 +17,34 @@ class CustomFoodPage extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 28.w),
       child: Center(
         child: GridView.count(
-          // mainAxisSpacing: 16.0.h,
-          // crossAxisSpacing: 16.0.w,
+          mainAxisSpacing: 16.0.h,
+          crossAxisSpacing: 16.0.w,
           crossAxisCount: 3,
           children: FavoritesController.food,
         ),
       ),
-    ) : Padding(
-      padding: EdgeInsets.symmetric(horizontal: 31.w),
-      child: Center(
-        child: Column(
-          children: [
-            const Spacer(),
-            CustomNoResultWidget(
-              image: AppImages.noFoodAndRecipeFoundImage,
-              width: 330.w,
-              title: "No Foods Found",
-              subTitle: "You don’t save any food. Go ahead, search and save your favorite food",
+    ) : Center(
+      child: Column(
+        children: [
+          const Spacer(),
+          CustomNoResultWidget(
+            image: AppImages.noFoodAndRecipeFoundImage,
+            width: 330.w,
+            title: "No Foods Found",
+            subTitle: "You don't save any food. Go ahead, search and save your favorite food",
+          ),
+          const Spacer(),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 11.w),
+            child: CustomButtonWidget(
+              onPressed: (){
+                context.go(AppRouteName.search);
+              },
+              text: "Search Food",
             ),
-            const Spacer(),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 11.w),
-              child: CustomButtonWidget(
-                onPressed: (){
-                  context.go(AppRouteName.search);
-                },
-                text: "Search Food",
-              ),
-            ),
-            SizedBox(height: 35.h),
-          ],
-        ),
+          ),
+          SizedBox(height: 35.h),
+        ],
       ),
     );
   }

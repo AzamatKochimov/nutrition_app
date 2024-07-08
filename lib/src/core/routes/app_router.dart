@@ -8,7 +8,6 @@ import "package:provider_go_router_flutter_localizations_inherited_widget/src/fe
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/main_page.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/splash/presentation/pages/onboarding.dart";
 import "../../feature/favorites/presentation/pages/favorites_page.dart";
-import "../../feature/favorites/presentation/pages/favorites_search_page.dart";
 import "../../feature/home/presentation/pages/home_page.dart";
 import "../../feature/profile/presentation/pages/profile_page.dart";
 import "../../feature/scan food/presentation/pages/scan_food_page.dart";
@@ -103,12 +102,6 @@ final class AppRouter{
             GoRoute(
               path: AppRouteName.favorites,
               builder: (BuildContext context, GoRouterState state) => const FavoritesPage(),
-              routes: [
-                GoRoute(
-                  path: AppRouteName.favoritesSearchView,
-                  builder: (BuildContext context, GoRouterState state) => const FavoritesSearchPage(),
-                ),
-              ]
             ),
 
             /// Profile

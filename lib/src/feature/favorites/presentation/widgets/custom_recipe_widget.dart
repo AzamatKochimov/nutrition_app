@@ -26,7 +26,7 @@ class CustomRecipeWidget extends StatelessWidget {
       height: 120.h,
       width: double.infinity,
       padding: EdgeInsets.all(8.h),
-      margin: EdgeInsets.only(top: 16.h),
+      margin: EdgeInsets.only(bottom: 16.h),
       decoration: const BoxDecoration(
         color: AppColors.cEFF7EE,
         borderRadius: BorderRadius.all(Radius.circular(16)),

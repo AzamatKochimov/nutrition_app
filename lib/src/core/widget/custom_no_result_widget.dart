@@ -8,18 +8,19 @@ class CustomNoResultWidget extends StatelessWidget {
   final SvgPicture image;
   final String title;
   final String subTitle;
+  final double? width;
   const CustomNoResultWidget({
     super.key,
     required this.image,
     required this.title,
-    required this.subTitle,
+    required this.subTitle, this.width,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 204.h,
-      width: 256.w,
+      width: width ?? 256.w,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [

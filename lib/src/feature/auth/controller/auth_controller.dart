@@ -16,4 +16,32 @@ class AuthController extends ChangeNotifier{
     newPassC.dispose();
     confirmNewPassC.dispose();
   }
+
+  /// For LogIn
+  bool logInVisible = true;
+  void logInVisibleFunc(){
+    logInVisible = !logInVisible;
+    notifyListeners();
+  }
+
+  /// For Register
+  bool registerVisibility = true;
+  void registerVisibilityFunc(){
+    registerVisibility = !registerVisibility;
+    notifyListeners();
+  }
+
+  void refresh({required String doYouWantToRefreshLoginOrRegister}){
+    doYouWantToRefreshLoginOrRegister == "l" ? logInVisible = true : registerVisibility = true;
+    notifyListeners();
+  }
+
+
 }
+
+
+
+
+
+
+

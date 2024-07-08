@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/routes/app_route_name.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/text_style.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_button_widget.dart';
@@ -42,20 +43,31 @@ class Login extends StatelessWidget {
                 textInputAction: TextInputAction.next,
               ),
               SizedBox(height: 20.h),
-              CustomTextField(
-                controller: AuthController.passwordC,
-                labelText: "Password",
-                hintText: "******",
-                keyBoardType: TextInputType.text,
-                textInputAction: TextInputAction.done,
-                suffixIcon: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.visibility),
+              Consumer<AuthController>(
+                builder: (
+                  BuildContext context,
+                  AuthController value,
+                  Widget? child,
+                ) =>
+                    CustomTextField(
+                  controller: AuthController.passwordC,
+                  labelText: "Password",
+                  hintText: "******",
+                  keyBoardType: TextInputType.text,
+                  textInputAction: TextInputAction.done,
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      value.logInVisibleFunc();
+                    },
+                    icon: value.logInVisible
+                        ? const Icon(Icons.visibility)
+                        : const Icon(Icons.visibility_off),
+                  ),
+                  onTap: () {
+                    // value.visibleFunc();
+                  },
+                  obscureText: value.logInVisible,
                 ),
-                onTap: () {
-                  /// Missed side
-                },
-                obscureText: true,
               ),
               SizedBox(height: 6.h),
               Row(
@@ -81,20 +93,31 @@ class Login extends StatelessWidget {
               const Spacer(flex: 2),
               CustomButtonWidget(
                 onPressed: () {
-                  /// Not working correctly
+                  AuthController.emailC.clear();
+                  AuthController.passwordC.clear();
                   context.go(AppRouteName.home);
                 },
                 text: "Log In",
               ),
               const Spacer(flex: 1),
-              CustomRichText(
-                text: "Don't have an account?",
-                textSize: 18,
-                navigateText: "Create an account",
-                navigateTextSize: 19,
-                onTap: () {
-                  context.go("${AppRouteName.login}/${AppRouteName.register}");
-                },
+              Consumer<AuthController>(
+                builder: (
+                  BuildContext context,
+                  AuthController value,
+                  Widget? child,
+                ) =>
+                    CustomRichText(
+                  text: "Don't have an account?",
+                  textSize: 18,
+                  navigateText: "Create an account",
+                  navigateTextSize: 19,
+                  onTap: () {
+                    AuthController.emailC.clear();
+                    AuthController.passwordC.clear();
+                    value.refresh(doYouWantToRefreshLoginOrRegister: "r");
+                    context.go("${AppRouteName.login}/${AppRouteName.register}");
+                  },
+                ),
               ),
               const Spacer(),
             ],

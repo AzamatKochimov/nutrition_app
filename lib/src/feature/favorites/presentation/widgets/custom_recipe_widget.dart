@@ -25,41 +25,48 @@ class CustomRecipeWidget extends StatelessWidget {
     return Container(
       height: 120.h,
       width: double.infinity,
-      padding: EdgeInsets.all(28.h),
+      padding: EdgeInsets.all(8.h),
       margin: EdgeInsets.only(top: 16.h),
       decoration: const BoxDecoration(
         color: AppColors.cEFF7EE,
         borderRadius: BorderRadius.all(Radius.circular(16)),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Stack(
+        alignment: Alignment.topRight,
         children: [
-          image,
-          SizedBox(width: 20.w),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomTextWidget(
-                text: "$kcal Kcal",
-                fontWeight: FontWeight.w600,
-                fontSize: 12,
-                color: AppColors.c6CB663,
-              ),
-              CustomTextWidget(
-                text: title,
-                fontSize: 16,
-                color: AppColors.c2E2E2E,
-              ),
-              CustomTextWidget(
-                text: subTitle,
-                fontWeight: FontWeight.w300,
-                fontSize: 12,
-                color: AppColors.c767676,
-              ),
-            ],
+          Padding(
+            padding: EdgeInsets.all(20.h),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                image,
+                SizedBox(width: 20.w),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomTextWidget(
+                      text: "$kcal Kcal",
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                      color: AppColors.c6CB663,
+                    ),
+                    CustomTextWidget(
+                      text: title,
+                      fontSize: 16,
+                      color: AppColors.c2E2E2E,
+                    ),
+                    CustomTextWidget(
+                      text: subTitle,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 12,
+                      color: AppColors.c767676,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
-          const Spacer(),
           iconButton,
         ],
       ),

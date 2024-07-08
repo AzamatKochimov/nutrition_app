@@ -26,25 +26,25 @@ class CustomScanFoodResult extends StatelessWidget {
         ),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 12, top: 12),
+            child: IconButton(
+              onPressed: () {
+                context.pop();
+              },
+              icon: const Icon(
+                CupertinoIcons.xmark,
+                color: AppColors.black,
+              ),
+            ),
+          ),
           Expanded(
-            flex: 5,
+            flex: 4,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 12, top: 12),
-                  child: IconButton(
-                    onPressed: (){
-                      context.pop();
-                    },
-                    icon: const Icon(
-                      CupertinoIcons.xmark,
-                      color: AppColors.black,
-                    ),
-                  ),
-                ),
                 Center(child: AppImages.hamburgerBigImage),
                 Container(
                   height: 110.h,
@@ -93,10 +93,15 @@ class CustomScanFoodResult extends StatelessWidget {
                   ),
                   const CustomTextWidget(text: "Ingredients"),
                   SizedBox(
-                    height: 70.h,
+                    height: 64.h,
                     width: double.infinity,
-                    child: ListView(
+                    child: GridView(
                       scrollDirection: Axis.horizontal,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 1,
+                        mainAxisSpacing: 16,
+                      ),
                       children: [
                         CustomFoodWidget(image: AppImages.breadImage),
                         CustomFoodWidget(image: AppImages.tomatoImage),

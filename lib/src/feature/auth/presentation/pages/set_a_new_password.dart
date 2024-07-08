@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/routes/app_route_name.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_button_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_text_widget.dart';
@@ -30,20 +31,26 @@ class SetANewPassword extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 17.3.h),
-              CustomTextField(
-                controller: AuthController.passwordC,
-                labelText: "New Password",
-                hintText: "****",
-                keyBoardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-              ),
+              Consumer<AuthController>(builder: (context, ref, child) {
+                return CustomTextField(
+                  controller: ref.passwordC,
+                  labelText: "New Password",
+                  hintText: "****",
+                  keyBoardType: TextInputType.text,
+                  textInputAction: TextInputAction.next,
+                );
+              }),
               SizedBox(height: 20.h),
-              CustomTextField(
-                controller: AuthController.passwordC,
-                labelText: "Confirm New Password",
-                hintText: "****",
-                keyBoardType: TextInputType.text,
-                textInputAction: TextInputAction.done,
+              Consumer<AuthController>(
+                builder: (context, ref, child) {
+                  return CustomTextField(
+                    controller: ref.passwordC,
+                    labelText: "Confirm New Password",
+                    hintText: "****",
+                    keyBoardType: TextInputType.text,
+                    textInputAction: TextInputAction.done,
+                  );
+                },
               ),
               SizedBox(height: 101.93.h),
               CustomButtonWidget(

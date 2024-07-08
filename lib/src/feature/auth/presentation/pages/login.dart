@@ -35,38 +35,37 @@ class Login extends StatelessWidget {
                 alignment: Alignment.center,
               ),
               const Spacer(),
-              CustomTextField(
-                controller: AuthController.emailC,
-                labelText: "Email",
-                hintText: "eg. example@gmail.com",
-                keyBoardType: TextInputType.emailAddress,
-                textInputAction: TextInputAction.next,
+              Consumer<AuthController>(
+                builder: (context,ref,child) {
+                  return CustomTextField(
+                    controller: ref.emailC,
+                    labelText: "Email",
+                    hintText: "eg. example@gmail.com",
+                    keyBoardType: TextInputType.emailAddress,
+                    textInputAction: TextInputAction.next,
+                  );
+                }
               ),
               SizedBox(height: 20.h),
               Consumer<AuthController>(
-                builder: (
-                  BuildContext context,
-                  AuthController value,
-                  Widget? child,
-                ) =>
-                    CustomTextField(
-                  controller: AuthController.passwordC,
+                builder: (context, authController, child) => CustomTextField(
+                  controller: authController.passwordC,
                   labelText: "Password",
                   hintText: "******",
                   keyBoardType: TextInputType.text,
                   textInputAction: TextInputAction.done,
                   suffixIcon: IconButton(
                     onPressed: () {
-                      value.logInVisibleFunc();
+                      authController.logInVisibleFunc();
                     },
-                    icon: value.logInVisible
+                    icon: authController.logInVisible
                         ? const Icon(Icons.visibility)
                         : const Icon(Icons.visibility_off),
                   ),
                   onTap: () {
                     // value.visibleFunc();
                   },
-                  obscureText: value.logInVisible,
+                  obscureText: authController.logInVisible,
                 ),
               ),
               SizedBox(height: 6.h),
@@ -91,31 +90,30 @@ class Login extends StatelessWidget {
                 ],
               ),
               const Spacer(flex: 2),
-              CustomButtonWidget(
-                onPressed: () {
-                  AuthController.emailC.clear();
-                  AuthController.passwordC.clear();
-                  context.go(AppRouteName.home);
-                },
-                text: "Log In",
-              ),
+              Consumer<AuthController>(builder: (context, ref, child) {
+                return CustomButtonWidget(
+                  onPressed: () {
+                    ref.emailC.clear();
+                    ref.passwordC.clear();
+                    context.go(AppRouteName.home);
+                  },
+                  text: "Log In",
+                );
+              }),
               const Spacer(flex: 1),
               Consumer<AuthController>(
-                builder: (
-                  BuildContext context,
-                  AuthController value,
-                  Widget? child,
-                ) =>
-                    CustomRichText(
+                builder: (context, authController, child) => CustomRichText(
                   text: "Don't have an account?",
                   textSize: 18,
                   navigateText: "Create an account",
                   navigateTextSize: 19,
                   onTap: () {
-                    AuthController.emailC.clear();
-                    AuthController.passwordC.clear();
-                    value.refresh(doYouWantToRefreshLoginOrRegister: "r");
-                    context.go("${AppRouteName.login}/${AppRouteName.register}");
+                    authController.emailC.clear();
+                    authController.passwordC.clear();
+                    authController.refresh(
+                        doYouWantToRefreshLoginOrRegister: "r");
+                    context
+                        .go("${AppRouteName.login}/${AppRouteName.register}");
                   },
                 ),
               ),

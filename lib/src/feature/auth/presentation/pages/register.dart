@@ -34,75 +34,75 @@ class Register extends StatelessWidget {
                 alignment: Alignment.center,
               ),
               SizedBox(height: 25.h),
-              CustomTextField(
-                controller: AuthController.nameC,
-                labelText: "Name",
-                hintText: "eg. Abdulloh",
-                keyBoardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-              ),
-              SizedBox(height: 20.h),
-              CustomTextField(
-                controller: AuthController.emailC,
-                labelText: "Email",
-                hintText: "eg. example@gmail.com",
-                keyBoardType: TextInputType.emailAddress,
-                textInputAction: TextInputAction.next,
+              Consumer<AuthController>(
+                builder: (context,ref,child) {
+                  return CustomTextField(
+                    controller: ref.nameC,
+                    labelText: "Name",
+                    hintText: "eg. Abdulloh",
+                    keyBoardType: TextInputType.text,
+                    textInputAction: TextInputAction.next,
+                  );
+                }
               ),
               SizedBox(height: 20.h),
               Consumer<AuthController>(
-                builder: (
-                  BuildContext context,
-                  AuthController value,
-                  Widget? child,
-                ) =>
-                    CustomTextField(
-                  controller: AuthController.passwordC,
+                builder: (context,ref,child) {
+                  return CustomTextField(
+                    controller: ref.emailC,
+                    labelText: "Email",
+                    hintText: "eg. example@gmail.com",
+                    keyBoardType: TextInputType.emailAddress,
+                    textInputAction: TextInputAction.next,
+                  );
+                }
+              ),
+              SizedBox(height: 20.h),
+              Consumer<AuthController>(
+                builder: (context, authController, child) => CustomTextField(
+                  controller: authController.passwordC,
                   labelText: "Password",
                   hintText: "******",
                   keyBoardType: TextInputType.text,
                   textInputAction: TextInputAction.done,
                   suffixIcon: IconButton(
                     onPressed: () {
-                      value.registerVisibilityFunc();
+                      authController.registerVisibilityFunc();
                     },
-                    icon: value.registerVisibility
+                    icon: authController.registerVisibility
                         ? const Icon(Icons.visibility)
                         : const Icon(Icons.visibility_off),
                   ),
                   onTap: () {
                     // value.visibleFunc();
                   },
-                  obscureText: value.registerVisibility,
+                  obscureText: authController.registerVisibility,
                 ),
               ),
               const Spacer(),
-              CustomButtonWidget(
-                onPressed: () {
-                  AuthController.nameC.clear();
-                  AuthController.emailC.clear();
-                  AuthController.passwordC.clear();
-                  context.go(AppRouteName.home);
-                },
-                text: "Register",
-              ),
+              Consumer<AuthController>(builder: (context, ref, child) {
+                return CustomButtonWidget(
+                  onPressed: () {
+                    ref.nameC.clear();
+                    ref.emailC.clear();
+                    ref.passwordC.clear();
+                    context.go(AppRouteName.home);
+                  },
+                  text: "Register",
+                );
+              }),
               const Spacer(),
               Consumer<AuthController>(
-                builder: (
-                  BuildContext context,
-                  AuthController value,
-                  Widget? child,
-                ) =>
-                    CustomRichText(
+                builder: (context, ref, child) => CustomRichText(
                   text: "Already have an account?",
                   textSize: 20,
                   navigateText: "Log In",
                   navigateTextSize: 20,
                   onTap: () {
-                    AuthController.nameC.clear();
-                    AuthController.emailC.clear();
-                    AuthController.passwordC.clear();
-                    value.refresh(doYouWantToRefreshLoginOrRegister: "l");
+                    ref.nameC.clear();
+                    ref.emailC.clear();
+                    ref.passwordC.clear();
+                    ref.refresh(doYouWantToRefreshLoginOrRegister: "l");
                     context.pop();
                   },
                 ),

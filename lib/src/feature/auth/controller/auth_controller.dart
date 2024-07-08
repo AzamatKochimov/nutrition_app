@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AuthController extends ChangeNotifier{
-  static TextEditingController nameC = TextEditingController();
-  static TextEditingController emailC = TextEditingController();
-  static TextEditingController passwordC = TextEditingController();
-  static TextEditingController newPassC = TextEditingController();
-  static TextEditingController confirmNewPassC = TextEditingController();
+  TextEditingController nameC = TextEditingController();
+  TextEditingController emailC = TextEditingController();
+  TextEditingController passwordC = TextEditingController();
+  TextEditingController newPassC = TextEditingController();
+  TextEditingController confirmNewPassC = TextEditingController();
 
   @override
   void dispose() {

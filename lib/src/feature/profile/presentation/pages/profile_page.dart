@@ -44,7 +44,6 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Center(
           child: Column(
             children: [
-              const Spacer(),
               SizedBox(height: 36.h),
               MaterialButton(
                 onPressed: onPressed,

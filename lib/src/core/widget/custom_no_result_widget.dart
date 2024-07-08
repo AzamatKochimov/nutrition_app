@@ -19,12 +19,13 @@ class CustomNoResultWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 204.h,
+      height: 214.h,
       width: width ?? 256.w,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           image,
+          SizedBox(height: 10.h),
           CustomTextWidget(
             text: title,
             color: AppColors.c696969,

@@ -6,7 +6,7 @@ import "package:provider_go_router_flutter_localizations_inherited_widget/src/fe
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/register.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/presentation/pages/set_a_new_password.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/presentation/pages/main_page.dart";
-import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/splash/presentation/pages/onboarding.dart";
+import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/splash/presentation/pages/onboarding_page.dart";
 import "../../feature/favorites/presentation/pages/favorites_page.dart";
 import "../../feature/home/presentation/pages/home_page.dart";
 import "../../feature/profile/presentation/pages/profile_page.dart";
@@ -31,7 +31,7 @@ final class AppRouter{
         /// Onboarding
         GoRoute(
           path: AppRouteName.onboarding,
-          builder: (BuildContext context, GoRouterState state) => const Onboarding(),
+          builder: (BuildContext context, GoRouterState state) => const OnboardingPage(),
         ),
 
         /// Auth /// Must check!!!

@@ -32,11 +32,10 @@ class SearchPage extends StatelessWidget {
               alignment: Alignment.centerLeft,
             ),
             SizedBox(
-              height: 241.h,
+              height: 243.h,
               width: double.infinity,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.zero,
                 itemBuilder: (context, index) {
                   return const CustomSearchVegetableWidget(
                     title: "The Pumkins Secrets",

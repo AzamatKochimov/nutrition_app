@@ -36,12 +36,13 @@ class CustomSearchVegetableWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(height: 10.h,),
                 CustomTextWidget(
-                  text: " $title",
+                  text: "  $title",
                   fontSize: 14.h,
                 ),
                 CustomTextWidget(
-                  text: " ${subTitle??""}",
+                  text: "  ${subTitle??""}",
                   fontWeight: FontWeight.w300,
                   fontSize: 12.h,
                 ),

@@ -5,6 +5,7 @@ import "package:provider_go_router_flutter_localizations_inherited_widget/src/fe
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/favorites/controller/favorites_controller.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/home/controller/home_controller.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/scan%20food/controller/scan_food_controller.dart";
+import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/splash/controller/splash_controller.dart";
 import "core/widget/app_material_context.dart";
 
 class App extends StatelessWidget {
@@ -27,6 +28,9 @@ class App extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => FavoritesController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => SplashController(),
         ),
       ],
       child: const App(),

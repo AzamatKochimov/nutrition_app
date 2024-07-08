@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/style/colors.dart';
-import '../../../../core/style/images.dart';
 import '../../../../core/style/text_style.dart';
 
 class ProfilePageItemWidget extends StatelessWidget {
@@ -54,7 +53,8 @@ class ProfilePageItemWidget extends StatelessWidget {
             const Spacer(),
             IconButton(
               onPressed: onPressed,
-              icon: AppImages.profilePageToRightIcon,
+              // icon: AppImages.profilePageToRightIcon,
+              icon: const Icon(Icons.chevron_right_rounded,color: AppColors.c909090,),
             ),
           ],
         ),

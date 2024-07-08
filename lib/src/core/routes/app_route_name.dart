@@ -6,7 +6,7 @@ final class AppRouteName {
 
   static const String splashPage = "/splash_page";
   static const String authGate = "/auth_gate";
-  static const String onboarding = "/onboarding";
+  static const String onboarding = "/onboarding_page";
   static const String login = "/login";
   static const String forgotPassword = "forgot_password";
   static const String forgotPasswordPinCode = "forgot_password_pin_code";

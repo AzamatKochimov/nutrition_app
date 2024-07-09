@@ -27,31 +27,39 @@ class FavoritesPage extends StatelessWidget {
         child: Column(
           children: [
             Consumer<FavoritesController>(
-              builder: (context,ref,child) {
+              builder: (context, ref, child) {
                 return CustomFavoriteTapbar(
                   selectedIndex: ref.selectedIndex,
                   onTabTapped: (index) => ref.selectedIndex = index,
                 );
-              }
+              },
             ),
-            SizedBox(height: 20.h,),
+            SizedBox(
+              height: 20.h,
+            ),
             Expanded(
               child: Consumer<FavoritesController>(
                 builder: (context, ref, child) {
                   return ref.selectedIndex == 0
-                      ? const CustomFoodPage()
+                      ? CustomFoodPage()
                       : const CustomRecipesPage();
                 },
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 11.w),
-              child: CustomButtonWidget(
-                onPressed: () {
-                  context.go(AppRouteName.search);
-                },
-                text: "Search Food",
-              ),
+            Consumer<FavoritesController>(
+              builder: (context, ref, child) {
+                return ref.selectedIndex != 0
+                    ? Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 11.w),
+                        child: CustomButtonWidget(
+                          onPressed: () {
+                            context.go(AppRouteName.search);
+                          },
+                          text: "Search Food",
+                        ),
+                      )
+                    : const SizedBox();
+              },
             ),
             SizedBox(height: 35.h),
           ],

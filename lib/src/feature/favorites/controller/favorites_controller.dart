@@ -6,7 +6,7 @@ import '../presentation/widgets/custom_recipe_widget.dart';
 
 class FavoritesController extends ChangeNotifier{
   int _selectedIndex = 0;
-  
+
   int get selectedIndex => _selectedIndex;
 
   set selectedIndex(int index){
@@ -52,7 +52,9 @@ class FavoritesController extends ChangeNotifier{
     ),
     CustomFoodWidget(
       image: AppImages.favoritesFoodPageAddFoodPlusIcon,
-      onPressed: () {},
+      onPressed: () {
+
+      },
       height: 105,
       width: 105,
       backColor: AppColors.cFFF8EE,

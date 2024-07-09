@@ -20,7 +20,7 @@ class CustomFavoriteTapbar extends StatelessWidget {
       children: [
         Expanded(
           child: MaterialButton(
-            height: 48.h,
+            height: 55.h,
             onPressed: () {
               onTabTapped(0);
             },
@@ -42,7 +42,7 @@ class CustomFavoriteTapbar extends StatelessWidget {
         ),
         Expanded(
           child: MaterialButton(
-            height: 48.h,
+            height: 55.h,
             onPressed: () {
               onTabTapped(1);
             },

@@ -4,6 +4,7 @@ import "package:provider/provider.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/controller/auth_controller.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/favorites/controller/favorites_controller.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/home/controller/home_controller.dart";
+import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/controller/main_controller.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/scan%20food/controller/scan_food_controller.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/search/controller/search_controller.dart";
 import "package:provider_go_router_flutter_localizations_inherited_widget/src/feature/splash/controller/splash_controller.dart";
@@ -20,6 +21,9 @@ class App extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => AuthController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => MainController(),
         ),
         ChangeNotifierProvider(
           create: (context) => HomeController(),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
@@ -6,10 +7,12 @@ import 'package:provider_go_router_flutter_localizations_inherited_widget/src/co
 
 class CustomSearchTextFieldWidget extends StatelessWidget {
   final void Function()? onTap;
+  final FocusNode? focusNode;
   final Color? prefixIconColor;
   final String hintText;
   final Color? hintextColor;
-  final Widget? suffixIcon;
+  final bool? suffixIcon;
+  final void Function()? suffixIconOnPressed; 
   final TextInputType? keyboardType;
   final void Function(String)? onChanged;
   final TextEditingController? controller;
@@ -18,16 +21,19 @@ class CustomSearchTextFieldWidget extends StatelessWidget {
     this.onTap,
     this.prefixIconColor,
     this.hintextColor,
-    this.suffixIcon, 
+    this.suffixIcon,
+    this.suffixIconOnPressed, 
     required this.hintText, 
     this.keyboardType, 
     this.onChanged, 
-    this.controller,
+    this.controller, 
+    this.focusNode,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      focusNode: focusNode,
       showCursor: keyboardType!=null?true: false,
       cursorColor: AppColors.c999999,
       keyboardType: keyboardType ?? TextInputType.none,
@@ -51,7 +57,10 @@ class CustomSearchTextFieldWidget extends StatelessWidget {
               fontFamily: "Signika",
               color: hintextColor ?? AppColors.c999999,
             ),
-        suffixIcon: suffixIcon,
+        suffixIcon: suffixIcon == true ? IconButton(
+          onPressed: suffixIconOnPressed,
+          icon:const Icon(CupertinoIcons.xmark_square,color: AppColors.black,),
+        ):null,
       ),
       onTap: onTap,
       controller: controller,

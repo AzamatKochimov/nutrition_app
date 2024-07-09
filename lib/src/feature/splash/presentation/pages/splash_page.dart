@@ -17,6 +17,7 @@ class SplashPage extends StatelessWidget {
       context.go(AppRouteName.onboarding);
     });
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.c91C788,
       body: Center(
         child: Column(

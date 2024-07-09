@@ -16,6 +16,7 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.white,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 47.w),
@@ -47,7 +48,7 @@ class OnboardingPage extends StatelessWidget {
                           curve: Curves.easeIn,
                         );
                 },
-                text: "Get Started",
+                text: ref.isFinal == true? "Get Started":"Next",
               );
             }),
             const Spacer(flex: 1),

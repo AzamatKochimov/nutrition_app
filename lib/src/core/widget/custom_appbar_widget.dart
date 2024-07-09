@@ -8,11 +8,13 @@ import 'package:provider_go_router_flutter_localizations_inherited_widget/src/co
 class CustomAppbarWidget extends StatelessWidget
     implements PreferredSizeWidget {
   final bool back;
+  final void Function()? onPressedBack;
   final String text;
   const CustomAppbarWidget({
     super.key, 
     required this.text,
-    required this.back,
+    required this.back, 
+    this.onPressedBack,
   });
 
   @override
@@ -26,7 +28,7 @@ class CustomAppbarWidget extends StatelessWidget
             CupertinoIcons.chevron_left,
             color: AppColors.black,
           ),
-          onPressed: () {
+          onPressed: onPressedBack ?? () {
             context.pop();
           },
         ),

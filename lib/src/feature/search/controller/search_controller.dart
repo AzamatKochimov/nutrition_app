@@ -1,18 +1,35 @@
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter/widgets.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-// class SearchController extends ChangeNotifier {
+class SearchPageController extends ChangeNotifier {
+  final TextEditingController textEditingController = TextEditingController();
+  bool textFieldSuffixIcon = false;
+  final FocusNode focusNode = FocusNode();
 
-//   TextEditingController textEditingController = TextEditingController();
-  
+  void requestFocus() {
+    focusNode.requestFocus();
+    // notifyListeners() здесь не нужен, если не требуется обновлять UI
+  }
 
-//   int textFieldCounter = 0;
-//   bool textFieldSuffixIcon = false;
-//   void textFieldSuffixIconTrue(){
-//     if (textEditingController!=null) {
-//       textFieldSuffixIcon = true;
-//       notifyListeners();
-//     }
-//   }
-// }
+  void textFieldCounter(String value){
+    if (value.isNotEmpty) {
+      textFieldSuffixIcon = true;
+    }else{
+      textFieldSuffixIcon = false;
+    }
+    notifyListeners();
+  }
+
+  void clearText(TextEditingController controller){
+    controller.clear();
+    textFieldCounter(textEditingController.text);
+  }
+
+  @override
+  void dispose() {
+    textEditingController.dispose();
+    focusNode.dispose();
+    super.dispose();
+  }
+}

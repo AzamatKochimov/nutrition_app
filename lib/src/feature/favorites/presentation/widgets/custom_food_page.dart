@@ -13,15 +13,12 @@ class CustomFoodPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FavoritesController.food.isNotEmpty ? Padding(
-      padding: EdgeInsets.symmetric(horizontal: 28.w),
-      child: Center(
-        child: GridView.count(
-          mainAxisSpacing: 16.0.h,
-          crossAxisSpacing: 16.0.w,
-          crossAxisCount: 3,
-          children: FavoritesController.food,
-        ),
+    return FavoritesController.food.isNotEmpty ? Center(
+      child: GridView.count(
+        mainAxisSpacing: 16.0.h,
+        crossAxisSpacing: 16.0.w,
+        crossAxisCount: 3,
+        children: FavoritesController.food,
       ),
     ) : Center(
       child: Column(

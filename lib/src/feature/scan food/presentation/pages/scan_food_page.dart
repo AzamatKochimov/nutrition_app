@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/routes/app_route_name.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/images.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/main/controller/main_controller.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/scan%20food/controller/scan_food_controller.dart';
 import '../widgets/custom_scan_food_bottom_navigation_bar.dart';
 
@@ -31,10 +30,10 @@ class ScanFoodPage extends StatelessWidget {
                   ),
                 );
               }else{
-                return const Center(
-                  child: CircularProgressIndicator(
-                    backgroundColor: AppColors.cFFC0B8,
-                  ),
+                return Container(
+                  height: double.infinity,
+                  width: double.infinity,
+                  color: AppColors.cFFC0B8,
                 );
               }
             },
@@ -48,7 +47,6 @@ class ScanFoodPage extends StatelessWidget {
                   children: [
                     IconButton(
                       onPressed: () {
-                        MainController.currentIndex = 0;
                         context.go(AppRouteName.home);
                       },
                       icon: AppImages.scannerPageXIcon,

@@ -90,16 +90,12 @@ class Login extends StatelessWidget {
                 ],
               ),
               const Spacer(flex: 2),
-              Consumer<AuthController>(builder: (context, ref, child) {
-                return CustomButtonWidget(
+              CustomButtonWidget(
                   onPressed: () {
-                    ref.emailC.clear();
-                    ref.passwordC.clear();
-                    context.go(AppRouteName.home);
+                    Provider.of<AuthController>(context,listen: false).login(context);
                   },
                   text: "Log In",
-                );
-              }),
+                ),
               const Spacer(flex: 1),
               Consumer<AuthController>(
                 builder: (context, authController, child) => CustomRichText(

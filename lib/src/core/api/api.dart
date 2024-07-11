@@ -4,25 +4,26 @@ import "package:http/http.dart" as http;
 import "package:http/http.dart";
 import "package:http_parser/http_parser.dart";
 
-import "../../../setup.dart";
+// import "../../../setup.dart";
 
 class Api {
   // baseUrl
-  static const String BASEURL = "";
+  static const String baseUrl = "nutrition-production.up.railway.app";
 
   // APIS
-  static String apiPostRegister = "/api/auth/register";
+  static String apiPostSignIn = "/auth/sign-in";
 
   // headers
   static Map<String, String> headers = <String, String>{
+    "accept": "*/*",
     "Content-Type": "application/json",
-    "Accept": "application/json",
-    "Authorization": "Bearer $token",
+    // "Accept": "application/json",
+    // "Authorization": "Bearer $token",
   };
 
   //methods
-  static Future<String?> GET(String api, Map<String, String> params) async {
-    final Uri url = Uri.https(BASEURL, api, params);
+  static Future<String?> get(String api, Map<String, String> params) async {
+    final Uri url = Uri.https(baseUrl, api, params);
     final http.Response response = await http.get(url, headers: headers);
     if (response.statusCode == 200 || response.statusCode == 201) {
       return response.body;
@@ -30,8 +31,8 @@ class Api {
     return null;
   }
 
-  static Future<String?> POST(String api, Map<String, dynamic> body) async {
-    final Uri url = Uri.https(BASEURL, api);
+  static Future<String?> post(String api, Map<String, dynamic> body) async {
+    final Uri url = Uri.https(baseUrl, api);
     final http.Response response = await http.post(url, headers: headers, body: jsonEncode(body));
     if (response.statusCode == 200 || response.statusCode == 201) {
       return response.body;
@@ -39,8 +40,8 @@ class Api {
     return null;
   }
 
-  static Future<String?> PUT(String api, Map<String, dynamic> body, Map<String, dynamic> param) async {
-    final Uri url = Uri.https(BASEURL, api, param);
+  static Future<String?> put(String api, Map<String, dynamic> body, Map<String, dynamic> param) async {
+    final Uri url = Uri.https(baseUrl, api, param);
     final http.Response response = await http.put(url, body: jsonEncode(body), headers: headers);
     if (response.statusCode == 200 || response.statusCode == 201) {
       return response.body;
@@ -49,9 +50,9 @@ class Api {
     }
   }
 
-  static Future<String?> MULTIPART(
+  static Future<String?> multipart(
       String api, String filePath, Map<String, String> body) async {
-    final Uri uri = Uri.http(BASEURL, api);
+    final Uri uri = Uri.http(baseUrl, api);
     final http.MultipartRequest request = MultipartRequest("POST", uri);
     request.headers.addAll(headers);
     request.files.add(await MultipartFile.fromPath("file", filePath,
@@ -65,9 +66,9 @@ class Api {
     }
   }
 
-  static Future<String?> PATCH(
+  static Future<String?> patch(
       String api, Map<String, String> params, Map<String, dynamic> body) async {
-    final Uri url = Uri.http(BASEURL, api);
+    final Uri url = Uri.http(baseUrl, api);
     final http.Response response =
     await http.patch(url, headers: headers, body: jsonEncode(body));
     if (response.statusCode == 200 || response.statusCode == 201) {
@@ -76,8 +77,8 @@ class Api {
     return null;
   }
 
-  static Future<String?> DELETE(String api, Map<String, String> params) async {
-    final Uri url = Uri.http(BASEURL, api, params);
+  static Future<String?> delete(String api, Map<String, String> params) async {
+    final Uri url = Uri.http(baseUrl, api, params);
     final http.Response response = await http.delete(url, headers: headers);
     if (response.statusCode == 200 || response.statusCode == 201) {
       return response.body;

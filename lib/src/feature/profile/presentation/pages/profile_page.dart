@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_appbar_widget.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/controller/auth_controller.dart';
 import '../../../../core/style/images.dart';
 import '../../../../core/widget/custom_text_widget.dart';
 import '../widgets/custom_profile_page_items_column_widget.dart';
@@ -58,16 +60,22 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
               const Spacer(),
-              const CustomTextWidget(
-                text: "Shambhavi Mishra",
-                fontSize: 25,
-                color: AppColors.c272727,
-              ),
-              const CustomTextWidget(
-                text: "Food Blogger",
-                fontSize: 16,
-                color: AppColors.cA1A1A1,
-              ),
+              Consumer<AuthController>(builder: (context, ref, child) {
+                return Column(
+                  children: [
+                    CustomTextWidget(
+                      text: ref.authModel?.name.toString() ?? "",
+                      fontSize: 25,
+                      color: AppColors.c272727,
+                    ),
+                    CustomTextWidget(
+                      text:ref.authModel?.email.toString() ?? "",
+                      fontSize: 16,
+                      color: AppColors.cA1A1A1,
+                    ),
+                  ],
+                );
+              }),
               const Spacer(),
               const CustomProfilePageItemsColumnWidget(),
               const Spacer(),

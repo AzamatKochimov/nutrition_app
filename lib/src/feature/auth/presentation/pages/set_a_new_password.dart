@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/routes/app_route_name.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_button_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_text_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/controller/auth_controller.dart';
@@ -14,6 +13,7 @@ class SetANewPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: Center(
@@ -35,7 +35,7 @@ class SetANewPassword extends StatelessWidget {
                 return CustomTextField(
                   controller: ref.passwordC,
                   labelText: "New Password",
-                  hintText: "****",
+                  hintText: "******",
                   keyBoardType: TextInputType.text,
                   textInputAction: TextInputAction.next,
                 );
@@ -44,9 +44,9 @@ class SetANewPassword extends StatelessWidget {
               Consumer<AuthController>(
                 builder: (context, ref, child) {
                   return CustomTextField(
-                    controller: ref.passwordC,
+                    controller: ref.confirmNewPassC,
                     labelText: "Confirm New Password",
-                    hintText: "****",
+                    hintText: "******",
                     keyBoardType: TextInputType.text,
                     textInputAction: TextInputAction.done,
                   );
@@ -55,7 +55,7 @@ class SetANewPassword extends StatelessWidget {
               SizedBox(height: 101.93.h),
               CustomButtonWidget(
                 onPressed: () {
-                  context.go(AppRouteName.login);
+                  Provider.of<AuthController>(context,listen: false).postForgotPasswordNewPassword(context);
                 },
                 text: "Done",
               ),

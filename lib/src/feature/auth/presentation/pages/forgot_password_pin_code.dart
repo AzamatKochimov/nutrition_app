@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/routes/app_route_name.dart';
+import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_button_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/widget/custom_text_widget.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/feature/auth/controller/auth_controller.dart';
@@ -14,6 +13,7 @@ class ForgotPasswordPinCode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: Center(
@@ -30,9 +30,9 @@ class ForgotPasswordPinCode extends StatelessWidget {
               Consumer<AuthController>(
                 builder: (context,authController,child) {
                   return CustomTextField(
-                    controller: authController.passwordC,
+                    controller: authController.sentCodeC,
                     labelText: "Password",
-                    hintText: "****",
+                    hintText: "******",
                     keyBoardType: TextInputType.text,
                     textInputAction: TextInputAction.done,
                     obscureText: true,
@@ -42,9 +42,7 @@ class ForgotPasswordPinCode extends StatelessWidget {
               SizedBox(height: 101.93.h),
               CustomButtonWidget(
                 onPressed: () {
-                  context.go(
-                    "${AppRouteName.login}/${AppRouteName.register}/${AppRouteName.forgotPassword}/${AppRouteName.forgotPasswordPinCode}/${AppRouteName.setANewPassword}",
-                  );
+                  Provider.of<AuthController>(context,listen: false).forgotPasswordVerifyEmail(context);
                 },
                 text: "Next",
               ),

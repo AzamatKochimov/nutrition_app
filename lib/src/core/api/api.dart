@@ -12,6 +12,9 @@ class Api {
 
   // APIS
   static String apiPostSignIn = "/auth/sign-in";
+  static String apiPostForgotPassword = "/auth/forgot-password";
+  static String apiPostForgotPasswordVerifyEmail = "/auth/forgot-password/verify-email";
+  static String apiPostForgotPasswordNewPassword = "/auth/forgot-password/new-password";
 
   // headers
   static Map<String, String> headers = <String, String>{
@@ -31,8 +34,8 @@ class Api {
     return null;
   }
 
-  static Future<String?> post(String api, Map<String, dynamic> body) async {
-    final Uri url = Uri.https(baseUrl, api);
+  static Future<String?> post(String api, {Map<String, dynamic>? body, Map<String, dynamic>? param}) async {
+    final Uri url = Uri.https(baseUrl, api, param);
     final http.Response response = await http.post(url, headers: headers, body: jsonEncode(body));
     if (response.statusCode == 200 || response.statusCode == 201) {
       return response.body;

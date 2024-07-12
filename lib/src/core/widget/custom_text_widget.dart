@@ -29,7 +29,7 @@ class CustomTextWidget extends StatelessWidget {
     return Container(
       alignment: alignment,
       child: Text(
-        " $text",
+        text,
         textAlign: textAlign ?? TextAlign.center,
         style: const AppTextStyle().headline10?.copyWith(
               fontFamily: fontFamily ?? "Signika",

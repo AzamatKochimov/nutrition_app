@@ -64,12 +64,12 @@ class _ProfilePageState extends State<ProfilePage> {
                 return Column(
                   children: [
                     CustomTextWidget(
-                      text: ref.authModel?.name.toString() ?? "",
+                      text: ref.authModel?.name.toString() ?? "Name",
                       fontSize: 25,
                       color: AppColors.c272727,
                     ),
                     CustomTextWidget(
-                      text:ref.authModel?.email.toString() ?? "",
+                      text:ref.authModel?.email.toString() ?? "email",
                       fontSize: 16,
                       color: AppColors.cA1A1A1,
                     ),

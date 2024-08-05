@@ -16,6 +16,7 @@ class CustomSearchVegetableWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: AppColors.white,
+      margin: EdgeInsets.only(right: 16.w,left: 1.w,bottom: 2.h),
       shape: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
         borderSide: BorderSide.none,
@@ -28,6 +29,10 @@ class CustomSearchVegetableWidget extends StatelessWidget {
             decoration: const BoxDecoration(
               color: AppColors.cFFF2F0,
               borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+              image: DecorationImage(
+                image: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToRp0paUbGgc7vtPUdtVqDnQakm3wJS-ImXQ&s"),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           SizedBox(
@@ -36,15 +41,17 @@ class CustomSearchVegetableWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 10.h,),
-                CustomTextWidget(
-                  text: "  $title",
-                  fontSize: 14.h,
+                SizedBox(
+                  height: 10.h,
                 ),
                 CustomTextWidget(
-                  text: "  ${subTitle??""}",
+                  text: "  $title",
+                  fontSize: 14.sp,
+                ),
+                CustomTextWidget(
+                  text: "  ${subTitle ?? ""}",
                   fontWeight: FontWeight.w300,
-                  fontSize: 12.h,
+                  fontSize: 12.sp,
                 ),
               ],
             ),

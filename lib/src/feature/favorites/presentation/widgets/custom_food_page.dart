@@ -10,7 +10,7 @@ import '../../../../core/widget/custom_food_widget.dart';
 import '../../../../core/widget/custom_no_result_widget.dart';
 
 class CustomFoodPage extends StatelessWidget {
-  CustomFoodPage({super.key});
+  const CustomFoodPage({super.key});
 
   @override
   Widget build(BuildContext context) {

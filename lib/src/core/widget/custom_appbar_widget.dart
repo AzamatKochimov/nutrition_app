@@ -5,15 +5,14 @@ import 'package:go_router/go_router.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/colors.dart';
 import 'package:provider_go_router_flutter_localizations_inherited_widget/src/core/style/text_style.dart';
 
-class CustomAppbarWidget extends StatelessWidget
-    implements PreferredSizeWidget {
+class CustomAppbarWidget extends StatelessWidget implements PreferredSizeWidget {
   final bool back;
   final void Function()? onPressedBack;
   final String text;
   const CustomAppbarWidget({
-    super.key, 
+    super.key,
     required this.text,
-    required this.back, 
+    required this.back,
     this.onPressedBack,
   });
 
@@ -21,24 +20,27 @@ class CustomAppbarWidget extends StatelessWidget
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
-      leading: back ? Transform.scale(
-        scale: 1.0.w, // Масштабирование
-        child: IconButton(
-          icon: const Icon(
-            CupertinoIcons.chevron_left,
-            color: AppColors.black,
-          ),
-          onPressed: onPressedBack ?? () {
-            context.pop();
-          },
-        ),
-      ):null,
+      leading: back
+          ? Transform.scale(
+              scale: 1.0.w,
+              child: IconButton(
+                icon: const Icon(
+                  CupertinoIcons.chevron_left,
+                  color: AppColors.black,
+                ),
+                onPressed: onPressedBack ??
+                    () {
+                      context.pop();
+                    },
+              ),
+            )
+          : null,
       backgroundColor: AppColors.white,
       title: Text(
         text,
-        style: const AppTextStyle()
-            .displayMedium
-            ?.copyWith(color: AppColors.c0D0D0D),
+        style: const AppTextStyle().displayMedium?.copyWith(
+              color: AppColors.c0D0D0D,
+            ),
       ),
       centerTitle: true,
     );

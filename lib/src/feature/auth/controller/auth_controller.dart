@@ -108,6 +108,7 @@ class AuthController extends ChangeNotifier {
       );
       context.go("${AppRouteName.login}/${AppRouteName.register}/${AppRouteName.forgotPassword}/${AppRouteName.forgotPasswordPinCode}/${AppRouteName.setANewPassword}");
     } else {
+      
       Utils.fireSnackBar(
         message: "Error code",
         context: context,

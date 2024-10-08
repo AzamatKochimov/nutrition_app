@@ -115,7 +115,7 @@ class AuthController extends ChangeNotifier {
       );
     }
   }
-
+  
   Future<void> postForgotPasswordNewPassword(BuildContext context) async {
     authModel = await repository.postForgotPasswordNewPassword(emailC.text,passwordC.text,confirmNewPassC.text);
     log(emailC.text);
